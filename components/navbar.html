@@ -1,0 +1,356 @@
+<!-- ============================================================
+     GlowVeda — Navbar Component
+     components/navbar.html
+     Loaded dynamically into every page via global.js
+     ============================================================ -->
+
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="navbar-inner">
+
+    <!-- ── LEFT: Logo ── -->
+<a href="../home-1/home.html" class="navbar-logo" aria-label="GlowVeda – go to homepage">
+  <img src="../global-images/logo.svg" alt="GlowVeda" height="44" />
+
+  <span class="logo-text">
+    Glow<span>Veda</span>
+  </span>
+</a>
+
+    <!-- ── CENTER: Desktop Nav ── -->
+    <ul class="navbar-nav" role="list">
+
+      <!-- Home (dropdown) -->
+      <li class="nav-item nav-item--dropdown">
+        <a href="../home-1/home.html" class="nav-link nav-link--has-dropdown" aria-haspopup="true" aria-expanded="false">
+          Home
+          <svg class="nav-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </a>
+        <div class="nav-dropdown" role="list" aria-label="Home pages">
+          <a href="../home-1/home.html" class="nav-dropdown__link" role="listitem">
+            <span class="nav-dropdown__icon">🌿</span>
+            <span class="nav-dropdown__text">
+              <strong>Home — General</strong>
+              <em>Classic skincare landing</em>
+            </span>
+          </a>
+          <a href="../home-2/home.html" class="nav-dropdown__link" role="listitem">
+            <span class="nav-dropdown__icon">✨</span>
+            <span class="nav-dropdown__text">
+              <strong>Home — Subscription</strong>
+              <em>Routine &amp; subscription focus</em>
+            </span>
+          </a>
+        </div>
+      </li>
+
+      <!-- About -->
+      <li class="nav-item">
+        <a href="../about/about.html" class="nav-link">About</a>
+      </li>
+
+      <!-- Services (dropdown) -->
+      <li class="nav-item nav-item--dropdown">
+        <a href="../services/services.html" class="nav-link nav-link--has-dropdown" aria-haspopup="true" aria-expanded="false">
+          Services
+          <svg class="nav-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </a>
+        <div class="nav-dropdown nav-dropdown--wide" role="list" aria-label="Our services">
+          <a href="../service-details/service-details-1.html" class="nav-dropdown__link" role="listitem">
+            <span class="nav-dropdown__icon">🧼</span>
+            <span class="nav-dropdown__text">
+              <strong>Custom Soap Crafting</strong>
+              <em>Handmade, bespoke soap bars</em>
+            </span>
+          </a>
+          <a href="../service-details/service-details-2.html" class="nav-dropdown__link" role="listitem">
+            <span class="nav-dropdown__icon">🌿</span>
+            <span class="nav-dropdown__text">
+              <strong>Skincare Consultation</strong>
+              <em>Personalised Ayurvedic advice</em>
+            </span>
+          </a>
+          <a href="../service-details/service-details-3.html" class="nav-dropdown__link" role="listitem">
+            <span class="nav-dropdown__icon">🎨</span>
+            <span class="nav-dropdown__text">
+              <strong>DIY Workshops</strong>
+              <em>Hands-on herbal craft sessions</em>
+            </span>
+          </a>
+          <a href="../service-details/service-details-4.html" class="nav-dropdown__link" role="listitem">
+            <span class="nav-dropdown__icon">📦</span>
+            <span class="nav-dropdown__text">
+              <strong>Subscription Box</strong>
+              <em>Monthly curated skincare kits</em>
+            </span>
+          </a>
+          <a href="../service-details/service-details-5.html" class="nav-dropdown__link" role="listitem">
+            <span class="nav-dropdown__icon">🏭</span>
+            <span class="nav-dropdown__text">
+              <strong>Wholesale &amp; Bulk</strong>
+              <em>Trade pricing for businesses</em>
+            </span>
+          </a>
+          <a href="../service-details/service-details-6.html" class="nav-dropdown__link" role="listitem">
+            <span class="nav-dropdown__icon">🎁</span>
+            <span class="nav-dropdown__text">
+              <strong>Corporate Gifting</strong>
+              <em>Premium branded gift sets</em>
+            </span>
+          </a>
+        </div>
+      </li>
+
+      <!-- Pricing -->
+      <li class="nav-item">
+        <a href="../pricing/pricing.html" class="nav-link">Pricing</a>
+      </li>
+
+      <!-- Blog (dropdown) -->
+      <li class="nav-item nav-item--dropdown">
+        <a href="../blogs/blogs.html" class="nav-link nav-link--has-dropdown" aria-haspopup="true" aria-expanded="false">
+          Blog
+          <svg class="nav-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </a>
+        <div class="nav-dropdown nav-dropdown--wide" role="list" aria-label="Blog articles">
+          <a href="../blog-details/blog-details-1.html" class="nav-dropdown__link" role="listitem">
+            <span class="nav-dropdown__icon">☀️</span>
+            <span class="nav-dropdown__text">
+              <strong>Morning Rituals</strong>
+              <em>Start your day the Ayurvedic way</em>
+            </span>
+          </a>
+          <a href="../blog-details/blog-details-2.html" class="nav-dropdown__link" role="listitem">
+            <span class="nav-dropdown__icon">🌙</span>
+            <span class="nav-dropdown__text">
+              <strong>Night Skincare</strong>
+              <em>Repair &amp; restore while you sleep</em>
+            </span>
+          </a>
+          <a href="../blog-details/blog-details-3.html" class="nav-dropdown__link" role="listitem">
+            <span class="nav-dropdown__icon">🌼</span>
+            <span class="nav-dropdown__text">
+              <strong>Ancient Turmeric</strong>
+              <em>Golden spice, timeless benefits</em>
+            </span>
+          </a>
+          <a href="../blog-details/blog-details-4.html" class="nav-dropdown__link" role="listitem">
+            <span class="nav-dropdown__icon">🌸</span>
+            <span class="nav-dropdown__text">
+              <strong>Neem &amp; Rose Water</strong>
+              <em>Nature's purifying duo</em>
+            </span>
+          </a>
+          <a href="../blog-details/blog-details-5.html" class="nav-dropdown__link" role="listitem">
+            <span class="nav-dropdown__icon">💧</span>
+            <span class="nav-dropdown__text">
+              <strong>Oil Pulling</strong>
+              <em>Ancient detox, modern results</em>
+            </span>
+          </a>
+          
+          <a href="../blogs/blogs.html" class="nav-dropdown__link nav-dropdown__link--all" role="listitem">
+            <span class="nav-dropdown__icon">📖</span>
+            <span class="nav-dropdown__text">
+              <strong>All Articles</strong>
+              <em>Browse the full blog</em>
+            </span>
+          </a>
+        </div>
+      </li>
+
+      <!-- Contact -->
+      <li class="nav-item">
+        <a href="../contact/contact.html" class="nav-link">Contact</a>
+      </li>
+
+    </ul><!-- /.navbar-nav -->
+
+    <!-- ── RIGHT: Controls + CTAs ── -->
+    <div class="navbar-actions">
+
+      <!-- Theme Toggle -->
+      <button
+        class="theme-toggle nav-ctrl-btn"
+        aria-label="Switch to dark mode"
+        title="Toggle dark mode"
+      >
+        <!-- Sun (shown in dark mode) -->
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none;">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <!-- Moon (shown in light mode) -->
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+
+      <!-- RTL Toggle -->
+      <button
+        class="rtl-toggle nav-ctrl-btn"
+        aria-label="Switch to RTL"
+        title="Toggle RTL layout"
+      >
+        <span class="rtl-label">RTL</span>
+      </button>
+
+      <!-- Get a Quote (desktop) -->
+      <a href="../contact/contact.html#contactForm" class="nav-btn nav-btn--quote hide-mobile-btn">
+        Get a Quote
+      </a>
+
+      <!-- Login (desktop) -->
+      <a href="../login/login.html" class="nav-btn nav-btn--login hide-mobile-btn">
+        Login
+      </a>
+
+    </div><!-- /.navbar-actions -->
+
+    <!-- ── Hamburger (mobile only) ── -->
+    <button
+      class="nav-hamburger"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div><!-- /.navbar-inner -->
+
+  <!-- ============================================================
+       MOBILE DRAWER NAV
+       ============================================================ -->
+  <div class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+
+    <!-- Mobile nav header -->
+    <div class="mobile-nav__header">
+      <img src="../global-images/logo.svg" alt="GlowVeda" class="mobile-nav__logo" />
+      <button class="mobile-nav__close" aria-label="Close menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile nav links -->
+    <div class="mobile-nav__body">
+
+      <!-- Home accordion -->
+      <div class="mob-item mob-item--accordion">
+        <button class="mob-link mob-link--parent" aria-expanded="false">
+          Home
+          <svg class="mob-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="mob-sub">
+          <a href="../home-1/home.html" class="mob-sub__link">🌿 Home — General</a>
+          <a href="../home-2/home.html" class="mob-sub__link">✨ Home — Subscription</a>
+        </div>
+      </div>
+
+      <!-- About -->
+      <a href="../about/about.html" class="mob-link">About</a>
+
+      <!-- Services accordion -->
+      <div class="mob-item mob-item--accordion">
+        <button class="mob-link mob-link--parent" aria-expanded="false">
+          Services
+          <svg class="mob-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="mob-sub">
+          <a href="../service-details/service-details-1.html" class="mob-sub__link">🧼 Custom Soap Crafting</a>
+          <a href="../service-details/service-details-2.html" class="mob-sub__link">🌿 Skincare Consultation</a>
+          <a href="../service-details/service-details-3.html" class="mob-sub__link">🎨 DIY Workshops</a>
+          <a href="../service-details/service-details-4.html" class="mob-sub__link">📦 Subscription Box</a>
+          <a href="../service-details/service-details-5.html" class="mob-sub__link">🏭 Wholesale &amp; Bulk</a>
+          <a href="../service-details/service-details-6.html" class="mob-sub__link">🎁 Corporate Gifting</a>
+        </div>
+      </div>
+
+      <!-- Pricing -->
+      <a href="../pricing/pricing.html" class="mob-link">Pricing</a>
+
+      <!-- Blog accordion -->
+      <div class="mob-item mob-item--accordion">
+        <button class="mob-link mob-link--parent" aria-expanded="false">
+          Blog
+          <svg class="mob-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="mob-sub">
+          <a href="../blog-details/blog-details-1.html" class="mob-sub__link">☀️ Morning Rituals</a>
+          <a href="../blog-details/blog-details-2.html" class="mob-sub__link">🌙 Night Skincare</a>
+          <a href="../blog-details/blog-details-3.html" class="mob-sub__link">🌼 Ancient Turmeric</a>
+          <a href="../blog-details/blog-details-4.html" class="mob-sub__link">🌸 Neem &amp; Rose Water</a>
+          <a href="../blog-details/blog-details-5.html" class="mob-sub__link">💧 Oil Pulling</a>
+          <a href="../blogs/blogs.html"                 class="mob-sub__link">📖 All Articles</a>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <a href="../contact/contact.html" class="mob-link">Contact</a>
+
+    </div><!-- /.mobile-nav__body -->
+
+    <!-- Mobile nav footer CTAs + controls -->
+    <div class="mobile-nav__footer">
+      <a href="../contact/contact.html#contactForm" class="nav-btn nav-btn--quote" style="width:100%;justify-content:center;">Get a Quote</a>
+      <a href="../login/login.html" class="nav-btn nav-btn--login" style="width:100%;justify-content:center;">Login</a>
+
+      <div class="mobile-nav__controls">
+        <button class="theme-toggle nav-ctrl-btn" aria-label="Switch to dark mode" title="Toggle dark mode">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none;">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <button class="rtl-toggle nav-ctrl-btn" aria-label="Switch to RTL" title="Toggle RTL">
+          <span class="rtl-label">RTL</span>
+        </button>
+      </div>
+    </div><!-- /.mobile-nav__footer -->
+
+  </div><!-- /#mobile-nav -->
+
+  <!-- Mobile overlay backdrop -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay" aria-hidden="true"></div>
+
+</nav><!-- /#navbar -->

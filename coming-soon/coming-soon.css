@@ -1,0 +1,1184 @@
+/* ============================================================
+   GlowVeda — Coming Soon Page Stylesheet
+   Organic Skincare & Soap Crafters
+   Version: 1.0.0
+   ============================================================
+   TABLE OF CONTENTS:
+   01. Design Tokens & CSS Variables
+   02. Dark Mode Overrides
+   03. Reset & Base
+   04. Theme & RTL Controls
+   05. Botanical Background Layer
+   06. Floating Particles
+   07. Main Layout
+   08. Entry Animations
+   09. Logo
+   10. Overline Label
+   11. Hero Headline & Tagline
+   12. Countdown Timer
+   13. Progress Bar
+   14. Email Subscribe Form
+   15. What's Coming Teaser
+   16. Social Links
+   17. Footer Row & Copyright
+   18. Responsive — Tablet & Mobile
+   ============================================================ */
+
+
+/* ============================================================
+   01. DESIGN TOKENS
+   ============================================================ */
+:root {
+  --cs-primary:        #2F6F4E;
+  --cs-primary-dark:   #1E3D2B;
+  --cs-primary-light:  #6BAF92;
+  --cs-accent:         #D4A857;
+  --cs-accent-light:   #E8D5B7;
+  --cs-sand:           #F4E9D8;
+  --cs-white:          #FFFFFF;
+  --cs-off-white:      #FAF8F4;
+  --cs-text-heading:   #1E3D2B;
+  --cs-text-body:      #1F2933;
+  --cs-text-muted:     #6B7280;
+  --cs-border:         rgba(168, 195, 160, 0.35);
+
+  --cs-bg:             #FAF8F4;
+  --cs-surface:        #FFFFFF;
+  --cs-botanical-clr:  #2F6F4E;
+
+  --cs-font-display:   'Cormorant Garamond', Georgia, serif;
+  --cs-font-body:      'DM Sans', system-ui, sans-serif;
+
+  --cs-gradient-green: linear-gradient(135deg, #2F6F4E, #6BAF92);
+  --cs-gradient-glow:  linear-gradient(135deg, #D4A857, #E8D5B7);
+
+  --cs-radius-sm:  6px;
+  --cs-radius-md:  12px;
+  --cs-radius-lg:  20px;
+  --cs-radius-xl:  28px;
+  --cs-radius-full: 9999px;
+
+  --cs-shadow-sm:  0 2px 8px rgba(30, 61, 43, 0.08);
+  --cs-shadow-md:  0 6px 24px rgba(30, 61, 43, 0.12);
+  --cs-shadow-lg:  0 12px 48px rgba(30, 61, 43, 0.16);
+  --cs-shadow-glow: 0 0 32px rgba(212, 168, 87, 0.3);
+
+  --cs-transition: 250ms ease;
+  --cs-bounce:     350ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+
+/* ============================================================
+   02. DARK MODE OVERRIDES
+   ============================================================ */
+[data-theme="dark"] {
+  --cs-bg:             #0D1F16;
+  --cs-surface:        #142218;
+  --cs-text-heading:   #C8DFC4;
+  --cs-text-body:      #E8F0EA;
+  --cs-text-muted:     #7A9B80;
+  --cs-border:         rgba(168, 195, 160, 0.15);
+  --cs-botanical-clr:  #6BAF92;
+  --cs-shadow-sm:  0 2px 8px rgba(0,0,0,0.3);
+  --cs-shadow-md:  0 6px 24px rgba(0,0,0,0.4);
+  --cs-shadow-lg:  0 12px 48px rgba(0,0,0,0.5);
+}
+
+
+/* ============================================================
+   03. RESET & BASE
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--cs-font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--cs-text-body);
+  background: var(--cs-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  position: relative;
+  transition: background-color var(--cs-transition), color var(--cs-transition);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { text-decoration: none; }
+img { max-width: 100%; display: block; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+::selection {
+  background: var(--cs-primary-light);
+  color: var(--cs-primary-dark);
+}
+
+
+/* ============================================================
+   04. THEME & RTL CONTROLS
+   ============================================================ */
+.cs-controls {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+[dir="rtl"] .cs-controls {
+  right: auto;
+  left: 20px;
+}
+
+.cs-ctrl-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--cs-radius-full);
+  border: 1px solid var(--cs-border);
+  background: var(--cs-surface);
+  color: var(--cs-text-body);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  box-shadow: var(--cs-shadow-sm);
+  transition:
+    background var(--cs-transition),
+    border-color var(--cs-transition),
+    color var(--cs-transition),
+    transform var(--cs-bounce);
+}
+
+.cs-ctrl-btn:hover {
+  background: var(--cs-sand);
+  border-color: var(--cs-primary-light);
+  color: var(--cs-primary);
+  transform: rotate(8deg) scale(1.05);
+}
+
+.cs-ctrl-btn:focus-visible {
+  outline: 3px solid var(--cs-accent);
+  outline-offset: 2px;
+}
+
+.cs-ctrl-btn svg { width: 18px; height: 18px; }
+
+
+/* ============================================================
+   05. BOTANICAL BACKGROUND LAYER
+   ============================================================ */
+.cs-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Radial gradient blobs */
+.cs-blob {
+  position: absolute;
+  border-radius: var(--cs-radius-full);
+  filter: blur(90px);
+}
+
+.cs-blob--1 {
+  width: 560px;
+  height: 560px;
+  top: -120px;
+  left: -100px;
+  background: radial-gradient(circle, rgba(107, 175, 146, 0.18), transparent 70%);
+  animation: blobDrift1 18s ease-in-out infinite;
+}
+
+.cs-blob--2 {
+  width: 420px;
+  height: 420px;
+  bottom: -80px;
+  right: -80px;
+  background: radial-gradient(circle, rgba(212, 168, 87, 0.14), transparent 70%);
+  animation: blobDrift2 22s ease-in-out infinite;
+}
+
+.cs-blob--3 {
+  width: 300px;
+  height: 300px;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(47, 111, 78, 0.1), transparent 70%);
+  animation: blobDrift3 15s ease-in-out infinite;
+}
+
+@keyframes blobDrift1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(40px, 30px) scale(1.05); }
+  66%       { transform: translate(-20px, 50px) scale(0.97); }
+}
+
+@keyframes blobDrift2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  40%       { transform: translate(-50px, -30px) scale(1.08); }
+  70%       { transform: translate(20px, -50px) scale(0.95); }
+}
+
+@keyframes blobDrift3 {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50%       { transform: translate(-50%, -50%) scale(1.12); }
+}
+
+/* Botanical SVG illustrations */
+.cs-botanical {
+  position: absolute;
+  color: var(--cs-botanical-clr);
+  transition: color var(--cs-transition);
+}
+
+.cs-botanical--tl {
+  top: -20px;
+  left: -20px;
+  width: 260px;
+  height: 340px;
+  animation: leafSway 12s ease-in-out infinite;
+  transform-origin: bottom left;
+}
+
+.cs-botanical--br {
+  bottom: -40px;
+  right: -40px;
+  width: 300px;
+  height: 300px;
+  animation: petalSpin 30s linear infinite;
+}
+
+.cs-botanical--ml {
+  top: 50%;
+  left: -30px;
+  transform: translateY(-50%);
+  width: 100px;
+  height: 180px;
+  animation: leafSway 16s ease-in-out infinite reverse;
+  transform-origin: bottom center;
+}
+
+.cs-botanical--tr {
+  top: 60px;
+  right: 40px;
+  width: 160px;
+  height: 120px;
+  animation: leafSway 14s ease-in-out infinite 3s;
+  transform-origin: right top;
+}
+
+@keyframes leafSway {
+  0%, 100% { transform: translateY(-50%) rotate(0deg); }
+  25%       { transform: translateY(-50%) rotate(2deg); }
+  75%       { transform: translateY(-50%) rotate(-1.5deg); }
+}
+
+/* Sway without translate for non-.ml variants */
+.cs-botanical--tl,
+.cs-botanical--tr { animation-name: leafSwaySimple; }
+
+@keyframes leafSwaySimple {
+  0%, 100% { transform: rotate(0deg); }
+  30%       { transform: rotate(1.5deg); }
+  70%       { transform: rotate(-1deg); }
+}
+
+@keyframes petalSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+
+/* ============================================================
+   06. FLOATING PARTICLES
+   ============================================================ */
+.cs-particles {
+  position: absolute;
+  inset: 0;
+}
+
+.cs-particle {
+  position: absolute;
+  border-radius: var(--cs-radius-full);
+  background: var(--cs-primary-light);
+  opacity: 0;
+  animation: particleFloat var(--dur, 8s) ease-in-out infinite var(--delay, 0s);
+}
+
+/* Individual particle sizes and positions */
+.cs-particle--1 { width: 6px;  height: 6px;  top: 20%;  left: 15%; --dur: 9s;  --delay: 0s; }
+.cs-particle--2 { width: 4px;  height: 4px;  top: 70%;  left: 25%; --dur: 12s; --delay: 2s; background: var(--cs-accent); }
+.cs-particle--3 { width: 8px;  height: 8px;  top: 35%;  left: 80%; --dur: 7s;  --delay: 1s; }
+.cs-particle--4 { width: 5px;  height: 5px;  top: 80%;  left: 70%; --dur: 10s; --delay: 3s; background: var(--cs-accent); }
+.cs-particle--5 { width: 3px;  height: 3px;  top: 10%;  left: 55%; --dur: 8s;  --delay: 0.5s; }
+.cs-particle--6 { width: 7px;  height: 7px;  top: 60%;  left: 90%; --dur: 11s; --delay: 4s; }
+.cs-particle--7 { width: 4px;  height: 4px;  top: 45%;  left: 5%;  --dur: 9s;  --delay: 2.5s; background: var(--cs-accent); }
+.cs-particle--8 { width: 5px;  height: 5px;  top: 90%;  left: 40%; --dur: 13s; --delay: 1.5s; }
+
+@keyframes particleFloat {
+  0%   { opacity: 0; transform: translateY(0) scale(0.5); }
+  15%  { opacity: 0.7; }
+  50%  { opacity: 0.4; transform: translateY(-60px) scale(1); }
+  85%  { opacity: 0.7; }
+  100% { opacity: 0; transform: translateY(-120px) scale(0.5); }
+}
+
+
+/* ============================================================
+   07. MAIN LAYOUT
+   ============================================================ */
+.cs-main {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 680px;
+  margin-inline: auto;
+  padding: 48px 24px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  text-align: center;
+}
+
+
+/* ============================================================
+   08. ENTRY ANIMATIONS
+   ============================================================ */
+.cs-anim {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: csReveal 0.7s ease forwards;
+}
+
+.cs-anim--delay-0  { animation-delay: 0.1s; }
+.cs-anim--delay-1  { animation-delay: 0.3s; }
+.cs-anim--delay-2  { animation-delay: 0.5s; }
+.cs-anim--delay-3  { animation-delay: 0.7s; }
+.cs-anim--delay-4  { animation-delay: 0.9s; }
+.cs-anim--delay-5  { animation-delay: 1.1s; }
+.cs-anim--delay-6  { animation-delay: 1.3s; }
+.cs-anim--delay-7  { animation-delay: 1.5s; }
+.cs-anim--delay-8  { animation-delay: 1.7s; }
+.cs-anim--delay-9  { animation-delay: 1.9s; }
+
+@keyframes csReveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-anim {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+/* ============================================================
+   09. LOGO
+   ============================================================ */
+.cs-logo {
+  display: inline-block;
+  transition: transform var(--cs-bounce), opacity var(--cs-transition);
+}
+
+.cs-logo img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 16px rgba(47, 111, 78, 0.25));
+  animation: logoFloat 5s ease-in-out infinite 2s;
+}
+
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+.cs-logo:hover img {
+  filter: drop-shadow(0 6px 24px rgba(212, 168, 87, 0.4));
+}
+
+.cs-logo:focus-visible {
+  outline: 3px solid var(--cs-accent);
+  outline-offset: 8px;
+  border-radius: var(--cs-radius-sm);
+}
+
+
+/* ============================================================
+   10. OVERLINE LABEL
+   ============================================================ */
+.cs-overline {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cs-primary);
+}
+
+.cs-overline__line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--cs-primary-light),
+    transparent
+  );
+  max-width: 80px;
+}
+
+[dir="rtl"] .cs-overline__line:first-child {
+  background: linear-gradient(to left, transparent, var(--cs-primary-light), transparent);
+}
+
+
+/* ============================================================
+   11. HERO HEADLINE & TAGLINE
+   ============================================================ */
+.cs-headline {
+  font-family: var(--cs-font-display);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--cs-text-heading);
+}
+
+.cs-headline em {
+  font-style: italic;
+  font-weight: 300;
+  /* Gradient text */
+  background: linear-gradient(135deg, #D4A857, #A47148);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cs-tagline {
+  font-size: 1.0625rem;
+  color: var(--cs-text-muted);
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+
+/* ============================================================
+   12. COUNTDOWN TIMER
+   ============================================================ */
+.cs-countdown {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cs-countdown__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+/* SVG ring wrapper */
+.cs-countdown__ring {
+  position: relative;
+  width: 88px;
+  height: 88px;
+}
+
+.cs-countdown__ring svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+/* Track circle */
+.cs-ring-track {
+  fill: none;
+  stroke: var(--cs-border);
+  stroke-width: 5;
+}
+
+/* Progress circle */
+.cs-ring-fill {
+  fill: none;
+  stroke: var(--cs-primary);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-dasharray: 213.6; /* 2π × 34 */
+  stroke-dashoffset: 213.6;
+  transition: stroke-dashoffset 0.6s ease;
+}
+
+/* Days ring — gold accent */
+#ring-days { stroke: var(--cs-accent); }
+
+/* Number overlaid on ring */
+.cs-countdown__num {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--cs-font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--cs-text-heading);
+  line-height: 1;
+}
+
+.cs-countdown__label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cs-text-muted);
+}
+
+/* Colon separator */
+.cs-countdown__dot {
+  font-family: var(--cs-font-display);
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--cs-primary-light);
+  line-height: 1;
+  margin-bottom: 24px;
+  animation: dotPulse 1s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+
+/* ============================================================
+   13. PROGRESS BAR
+   ============================================================ */
+.cs-progress-wrap {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cs-progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cs-progress-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cs-text-muted);
+}
+
+.cs-progress-pct {
+  font-family: var(--cs-font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--cs-primary);
+}
+
+/* Track */
+.cs-progress-track {
+  width: 100%;
+  height: 10px;
+  background: var(--cs-border);
+  border-radius: var(--cs-radius-full);
+  overflow: hidden;
+}
+
+/* Fill */
+.cs-progress-fill {
+  height: 100%;
+  border-radius: var(--cs-radius-full);
+  background: var(--cs-gradient-green);
+  position: relative;
+  transition: width 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Animated glow pulse on fill */
+.cs-progress-glow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: var(--cs-radius-full);
+  background: var(--cs-primary-light);
+  filter: blur(6px);
+  animation: progressGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes progressGlow {
+  0%, 100% { opacity: 0.6; transform: translateY(-50%) scale(1); }
+  50%       { opacity: 1;   transform: translateY(-50%) scale(1.4); }
+}
+
+/* Step milestones below the bar */
+.cs-progress-steps {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.cs-step {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--cs-text-muted);
+  white-space: nowrap;
+}
+
+.cs-step svg {
+  width: 13px;
+  height: 13px;
+}
+
+.cs-step--done {
+  color: var(--cs-primary);
+}
+
+.cs-step--done svg {
+  color: var(--cs-primary);
+}
+
+.cs-step--active {
+  color: var(--cs-accent);
+  font-weight: 600;
+}
+
+.cs-step--active svg {
+  color: var(--cs-accent);
+  animation: spinStep 1.5s linear infinite;
+}
+
+@keyframes spinStep {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+
+/* ============================================================
+   14. EMAIL SUBSCRIBE FORM
+   ============================================================ */
+.cs-subscribe {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.cs-subscribe__label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--cs-text-muted);
+}
+
+.cs-subscribe__label svg {
+  width: 16px;
+  height: 16px;
+  color: var(--cs-primary);
+}
+
+.cs-subscribe__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cs-subscribe__input-wrap {
+  display: flex;
+  gap: 0;
+  border: 1.5px solid var(--cs-border);
+  border-radius: var(--cs-radius-full);
+  background: var(--cs-surface);
+  overflow: hidden;
+  box-shadow: var(--cs-shadow-sm);
+  transition:
+    border-color var(--cs-transition),
+    box-shadow var(--cs-transition);
+}
+
+.cs-subscribe__input-wrap:focus-within {
+  border-color: var(--cs-primary);
+  box-shadow: 0 0 0 3px rgba(47, 111, 78, 0.12);
+}
+
+.cs-subscribe__input {
+  flex: 1;
+  padding: 14px 20px;
+  font-family: var(--cs-font-body);
+  font-size: 14px;
+  color: var(--cs-text-body);
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.cs-subscribe__input::placeholder {
+  color: var(--cs-text-muted);
+}
+
+/* Submit button inside the input row */
+.cs-subscribe__btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  background: var(--cs-gradient-green);
+  color: #fff;
+  font-family: var(--cs-font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border: none;
+  border-radius: 0 var(--cs-radius-full) var(--cs-radius-full) 0;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    opacity var(--cs-transition),
+    transform var(--cs-bounce);
+  flex-shrink: 0;
+}
+
+.cs-subscribe__btn svg {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--cs-bounce);
+}
+
+.cs-subscribe__btn:hover {
+  opacity: 0.92;
+  transform: translateX(2px);
+}
+
+.cs-subscribe__btn:hover svg {
+  transform: translateX(3px);
+}
+
+.cs-subscribe__btn:focus-visible {
+  outline: 3px solid var(--cs-accent);
+  outline-offset: 2px;
+}
+
+/* Error message */
+.cs-subscribe__error {
+  font-size: 12px;
+  color: #EF4444;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-align: left;
+  padding-left: 20px;
+}
+
+/* Success state */
+.cs-subscribe__success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 28px;
+  background: rgba(47, 111, 78, 0.07);
+  border: 1px solid rgba(47, 111, 78, 0.2);
+  border-radius: var(--cs-radius-lg);
+  animation: successPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes successPop {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.cs-subscribe__success-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--cs-radius-full);
+  background: rgba(34, 197, 94, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #22C55E;
+}
+
+.cs-subscribe__success-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.cs-subscribe__success p {
+  font-size: 14px;
+  color: var(--cs-text-muted);
+  line-height: 1.6;
+}
+
+.cs-subscribe__success strong {
+  color: var(--cs-text-heading);
+}
+
+/* Privacy note */
+.cs-subscribe__privacy {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--cs-text-muted);
+}
+
+.cs-subscribe__privacy svg {
+  width: 12px;
+  height: 12px;
+  color: var(--cs-primary-light);
+}
+
+
+/* ============================================================
+   15. WHAT'S COMING TEASER
+   ============================================================ */
+.cs-teaser {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cs-teaser__heading {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cs-text-muted);
+}
+
+.cs-teaser__items {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cs-teaser__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 20px;
+  background: var(--cs-surface);
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius-md);
+  flex: 1;
+  min-width: 100px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--cs-text-muted);
+  letter-spacing: 0.04em;
+  box-shadow: var(--cs-shadow-sm);
+  transition:
+    transform var(--cs-bounce),
+    box-shadow var(--cs-transition),
+    border-color var(--cs-transition);
+  cursor: default;
+}
+
+.cs-teaser__item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--cs-shadow-md);
+  border-color: var(--cs-primary-light);
+  color: var(--cs-primary);
+}
+
+.cs-teaser__item-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--cs-radius-sm);
+  background: rgba(47, 111, 78, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cs-primary);
+  transition: background var(--cs-transition), transform var(--cs-bounce);
+}
+
+.cs-teaser__item-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.cs-teaser__item:hover .cs-teaser__item-icon {
+  background: var(--cs-primary);
+  color: #fff;
+  transform: scale(1.1) rotate(-5deg);
+}
+
+
+/* ============================================================
+   16. SOCIAL LINKS
+   ============================================================ */
+.cs-social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.cs-social__label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cs-text-muted);
+}
+
+.cs-social__links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cs-social__link {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--cs-radius-full);
+  border: 1px solid var(--cs-border);
+  background: var(--cs-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cs-text-muted);
+  box-shadow: var(--cs-shadow-sm);
+  transition:
+    background var(--cs-transition),
+    border-color var(--cs-transition),
+    color var(--cs-transition),
+    transform var(--cs-bounce);
+}
+
+.cs-social__link svg {
+  width: 18px;
+  height: 18px;
+}
+
+.cs-social__link:hover {
+  background: var(--cs-primary);
+  border-color: var(--cs-primary);
+  color: #fff;
+  transform: translateY(-4px);
+}
+
+.cs-social__link:focus-visible {
+  outline: 3px solid var(--cs-accent);
+  outline-offset: 2px;
+}
+
+
+/* ============================================================
+   17. FOOTER ROW & COPYRIGHT
+   ============================================================ */
+.cs-footer-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cs-btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cs-text-muted);
+  transition: color var(--cs-transition), gap var(--cs-transition);
+}
+
+.cs-btn-back svg {
+  width: 15px;
+  height: 15px;
+  transition: transform var(--cs-bounce);
+}
+
+.cs-btn-back:hover {
+  color: var(--cs-primary);
+  gap: 10px;
+}
+
+.cs-btn-back:hover svg {
+  transform: translateX(-3px);
+}
+
+.cs-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cs-text-muted);
+  transition: color var(--cs-transition);
+}
+
+.cs-contact-link svg {
+  width: 14px;
+  height: 14px;
+}
+
+.cs-contact-link:hover {
+  color: var(--cs-primary);
+}
+
+.cs-footer-divider {
+  color: var(--cs-border);
+  font-size: 18px;
+  line-height: 1;
+}
+
+.cs-copyright {
+  font-size: 12px;
+  color: var(--cs-text-muted);
+  opacity: 0.7;
+}
+
+
+/* ============================================================
+   18. RESPONSIVE
+   ============================================================ */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .cs-main {
+    gap: 28px;
+    padding: 40px 20px 36px;
+  }
+
+  .cs-headline {
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+  }
+
+  .cs-countdown {
+    gap: 10px;
+  }
+
+  .cs-countdown__ring {
+    width: 76px;
+    height: 76px;
+  }
+
+  .cs-countdown__num {
+    font-size: 1.5rem;
+  }
+
+  .cs-countdown__dot {
+    font-size: 1.6rem;
+  }
+
+  .cs-botanical--tr,
+  .cs-botanical--ml {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .cs-main {
+    gap: 24px;
+    padding: 36px 16px 32px;
+  }
+
+  .cs-headline {
+    font-size: 2.4rem;
+  }
+
+  .cs-countdown {
+    gap: 8px;
+  }
+
+  .cs-countdown__ring {
+    width: 68px;
+    height: 68px;
+  }
+
+  .cs-countdown__num {
+    font-size: 1.3rem;
+  }
+
+  .cs-countdown__dot {
+    font-size: 1.4rem;
+    margin-bottom: 22px;
+  }
+
+  .cs-subscribe__btn-text { display: none; }
+
+  .cs-subscribe__btn {
+    padding: 14px 18px;
+    border-radius: 0 var(--cs-radius-full) var(--cs-radius-full) 0;
+  }
+
+  .cs-teaser__items {
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+  }
+
+  .cs-footer-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cs-footer-divider { display: none; }
+
+  .cs-botanical--tl {
+    width: 160px;
+    height: 220px;
+  }
+
+  .cs-botanical--br {
+    width: 180px;
+    height: 180px;
+  }
+}

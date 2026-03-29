@@ -1,0 +1,23 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <!-- Center base -->
+  <circle cx="60" cy="90" r="6" fill="#2F6F4E"></circle>
+
+  <!-- Leaf 1 -->
+  <path d="M60 90 
+           C55 70, 45 50, 60 20 
+           C75 50, 65 70, 60 90 Z" fill="#4CAF7A"></path>
+
+  <!-- Leaf 2 -->
+  <path d="M60 90 
+           C50 75, 30 60, 40 30 
+           C55 55, 58 75, 60 90 Z" fill="#3E8F63"></path>
+
+  <!-- Leaf 3 -->
+  <path d="M60 90 
+           C70 75, 90 60, 80 30 
+           C65 55, 62 75, 60 90 Z" fill="#3E8F63"></path>
+
+  <!-- Leaf highlights -->
+  <path d="M60 85 C57 70, 52 55, 60 30" stroke="#A5D6A7" stroke-width="2" stroke-linecap="round"></path>
+  <path d="M60 85 C63 70, 68 55, 60 30" stroke="#A5D6A7" stroke-width="2" stroke-linecap="round"></path>
+</svg>

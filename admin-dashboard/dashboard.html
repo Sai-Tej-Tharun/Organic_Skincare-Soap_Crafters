@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <!-- ============================================================
+       GlowVeda — Admin Dashboard
+       Organic Skincare & Soap Crafters
+       Version: 1.0.0
+  ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Admin Dashboard — GlowVeda</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
+
+  <!-- Dashboard CSS -->
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+
+<body data-theme="light">
+
+<!-- ============================================================
+     APP SHELL
+============================================================ -->
+<div class="dash-app" id="dash-app">
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="dash-sidebar" id="dash-sidebar" role="navigation" aria-label="Admin navigation">
+
+    <!-- Sidebar header: logo + collapse btn -->
+    <div class="dash-sidebar__header">
+      <a href="../home-1/home.html" class="dash-sidebar__logo" aria-label="GlowVeda — go to website">
+        <div class="dash-sidebar__logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="19" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M20 8 Q12 14 12 22 Q12 30 20 33 Q28 30 28 22 Q28 14 20 8Z" fill="currentColor" opacity="0.15"/>
+            <path d="M20 8 Q12 14 12 22 Q12 30 20 33 Q28 30 28 22 Q28 14 20 8Z" stroke="currentColor" stroke-width="1.2" fill="none"/>
+            <path d="M16 20 Q20 16 24 20 Q20 24 16 20Z" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="dash-sidebar__logo-text">
+          <span class="dash-sidebar__logo-name">GlowVeda</span>
+          <span class="dash-sidebar__logo-sub">Admin Panel</span>
+        </div>
+      </a>
+      <button class="dash-sidebar__collapse" id="sidebar-collapse" aria-label="Collapse sidebar" title="Collapse">
+        <i data-lucide="chevrons-left"></i>
+      </button>
+    </div>
+
+    <!-- Nav sections -->
+    <nav class="dash-sidebar__nav" aria-label="Dashboard sections">
+
+      <!-- Overview -->
+      <div class="dash-nav-group">
+        <span class="dash-nav-group__label">Overview</span>
+        <a href="#section-overview" class="dash-nav-link active" data-section="overview">
+          <i data-lucide="layout-dashboard"></i>
+          <span>Dashboard</span>
+          <span class="dash-nav-link__badge dash-nav-link__badge--new">New</span>
+        </a>
+        <a href="#section-analytics" class="dash-nav-link" data-section="analytics">
+          <i data-lucide="bar-chart-3"></i>
+          <span>Analytics</span>
+        </a>
+      </div>
+
+      <!-- Commerce -->
+      <div class="dash-nav-group">
+        <span class="dash-nav-group__label">Commerce</span>
+        <a href="#section-orders" class="dash-nav-link" data-section="orders">
+          <i data-lucide="shopping-bag"></i>
+          <span>Orders</span>
+          <span class="dash-nav-link__badge dash-nav-link__badge--alert">12</span>
+        </a>
+        <a href="#section-products" class="dash-nav-link" data-section="products">
+          <i data-lucide="package"></i>
+          <span>Products</span>
+        </a>
+        <a href="#section-inventory" class="dash-nav-link" data-section="inventory">
+          <i data-lucide="archive"></i>
+          <span>Inventory</span>
+        </a>
+        <a href="#section-subscriptions" class="dash-nav-link" data-section="subscriptions">
+          <i data-lucide="refresh-cw"></i>
+          <span>Subscriptions</span>
+        </a>
+      </div>
+
+      <!-- Customers -->
+      <div class="dash-nav-group">
+        <span class="dash-nav-group__label">Customers</span>
+        <a href="#section-customers" class="dash-nav-link" data-section="customers">
+          <i data-lucide="users"></i>
+          <span>Customers</span>
+        </a>
+        <a href="#section-reviews" class="dash-nav-link" data-section="reviews">
+          <i data-lucide="star"></i>
+          <span>Reviews</span>
+          <span class="dash-nav-link__badge dash-nav-link__badge--alert">5</span>
+        </a>
+        <a href="#section-messages" class="dash-nav-link" data-section="messages">
+          <i data-lucide="message-square"></i>
+          <span>Messages</span>
+          <span class="dash-nav-link__badge dash-nav-link__badge--alert">3</span>
+        </a>
+      </div>
+
+      <!-- Content -->
+      <div class="dash-nav-group">
+        <span class="dash-nav-group__label">Content</span>
+        <a href="#section-blog" class="dash-nav-link" data-section="blog">
+          <i data-lucide="book-open"></i>
+          <span>Blog CMS</span>
+        </a>
+        <a href="#section-services" class="dash-nav-link" data-section="services">
+          <i data-lucide="sparkles"></i>
+          <span>Services</span>
+        </a>
+      </div>
+
+      <!-- System -->
+      <div class="dash-nav-group">
+        <span class="dash-nav-group__label">System</span>
+        <a href="#section-settings" class="dash-nav-link" data-section="settings">
+          <i data-lucide="settings"></i>
+          <span>Settings</span>
+        </a>
+        <a href="../login/login.html" class="dash-nav-link dash-nav-link--logout">
+          <i data-lucide="log-out"></i>
+          <span>Logout</span>
+        </a>
+      </div>
+
+    </nav><!-- /.dash-sidebar__nav -->
+
+    <!-- Sidebar footer: admin profile mini -->
+    <div class="dash-sidebar__footer">
+      <img
+        src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&q=80"
+        alt="Priya Nair, Admin"
+        class="dash-sidebar__avatar"
+        width="36" height="36"
+      />
+      <div class="dash-sidebar__user-info">
+        <span class="dash-sidebar__user-name">Priya Nair</span>
+        <span class="dash-sidebar__user-role">Super Admin</span>
+      </div>
+      <button class="dash-sidebar__user-menu" aria-label="User menu">
+        <i data-lucide="more-vertical"></i>
+      </button>
+    </div>
+
+  </aside><!-- /.dash-sidebar -->
+
+  <!-- ── MAIN AREA ── -->
+  <div class="dash-body" id="dash-body">
+
+    <!-- ── TOP HEADER ── -->
+    <header class="dash-header" role="banner">
+
+      <!-- Left: mobile hamburger + breadcrumb -->
+      <div class="dash-header__left">
+        <button class="dash-header__hamburger" id="mobile-menu-btn" aria-label="Open menu">
+          <i data-lucide="menu"></i>
+        </button>
+        <div class="dash-header__breadcrumb" aria-label="breadcrumb">
+          <span class="dash-header__breadcrumb-root">GlowVeda</span>
+          <i data-lucide="chevron-right" aria-hidden="true"></i>
+          <span class="dash-header__breadcrumb-current" id="current-section-label">Dashboard</span>
+        </div>
+      </div>
+
+      <!-- Right: actions -->
+      <div class="dash-header__right">
+
+        <!-- Search -->
+        <div class="dash-header__search" role="search">
+          <i data-lucide="search" aria-hidden="true"></i>
+          <input
+            type="search"
+            placeholder="Search orders, products…"
+            aria-label="Search dashboard"
+            class="dash-header__search-input"
+            id="dash-search"
+          />
+          <kbd aria-hidden="true">⌘K</kbd>
+        </div>
+
+        <!-- Theme toggle -->
+        <button
+          class="dash-header__icon-btn theme-toggle"
+          id="theme-toggle"
+          aria-label="Toggle dark mode"
+          title="Toggle theme"
+        >
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true" style="display:none;">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <!-- ── NOTIFICATION BUTTON ── -->
+        <div class="dash-notif-wrap" id="notif-wrap">
+          <button
+            class="dash-header__icon-btn dash-notif-btn"
+            id="notif-btn"
+            aria-label="Notifications (7 unread)"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="notif-panel"
+          >
+            <i data-lucide="bell"></i>
+            <span class="dash-notif-badge" id="notif-badge" aria-hidden="true">7</span>
+          </button>
+
+          <!-- Notification Panel -->
+          <div
+            class="dash-notif-panel"
+            id="notif-panel"
+            role="dialog"
+            aria-label="Notifications"
+            aria-modal="false"
+            hidden
+          >
+            <!-- Panel header -->
+            <div class="dash-notif-panel__header">
+              <div class="dash-notif-panel__title-row">
+                <h2 class="dash-notif-panel__title">Notifications</h2>
+                <span class="dash-notif-panel__count" id="notif-unread-count">7 unread</span>
+              </div>
+              <div class="dash-notif-panel__actions">
+                <button class="dash-notif-panel__action-btn" id="mark-all-read" aria-label="Mark all notifications as read">
+                  <i data-lucide="check-check"></i>
+                  Mark all read
+                </button>
+                <button class="dash-notif-panel__action-btn dash-notif-panel__action-btn--clear" id="clear-all" aria-label="Clear all notifications">
+                  <i data-lucide="trash-2"></i>
+                  Clear all
+                </button>
+              </div>
+            </div>
+
+            <!-- Filter tabs -->
+            <div class="dash-notif-panel__tabs" role="tablist" aria-label="Filter notifications">
+              <button class="dash-notif-tab active" role="tab" aria-selected="true" data-filter="all">All</button>
+              <button class="dash-notif-tab" role="tab" aria-selected="false" data-filter="order">Orders</button>
+              <button class="dash-notif-tab" role="tab" aria-selected="false" data-filter="review">Reviews</button>
+              <button class="dash-notif-tab" role="tab" aria-selected="false" data-filter="system">System</button>
+              <button class="dash-notif-tab" role="tab" aria-selected="false" data-filter="message">Messages</button>
+            </div>
+
+            <!-- Notification list -->
+            <ul class="dash-notif-list" id="notif-list" role="list" aria-label="Notification items">
+              <!-- Items injected by JS -->
+            </ul>
+
+            <!-- Panel footer -->
+            <div class="dash-notif-panel__footer">
+              <a href="#section-messages" class="dash-notif-panel__view-all">
+                View all activity
+                <i data-lucide="arrow-right"></i>
+              </a>
+            </div>
+          </div><!-- /.dash-notif-panel -->
+        </div><!-- /.dash-notif-wrap -->
+
+        <!-- Profile avatar -->
+        <button class="dash-header__avatar-btn" aria-label="Admin profile menu">
+          <img
+            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&q=80"
+            alt="Priya Nair"
+            width="36" height="36"
+          />
+          <span class="dash-header__online-dot" aria-hidden="true"></span>
+        </button>
+
+      </div><!-- /.dash-header__right -->
+    </header><!-- /.dash-header -->
+
+    <!-- ── PAGE CONTENT ── -->
+    <main class="dash-content" id="dash-content" role="main">
+
+      <!-- ══════════════════════════════════════════════
+           SECTION: OVERVIEW / DASHBOARD HOME
+      ══════════════════════════════════════════════ -->
+      <section class="dash-section active" id="section-overview" aria-label="Dashboard overview">
+
+        <!-- Welcome banner -->
+        <div class="dash-welcome">
+          <div class="dash-welcome__text">
+            <p class="dash-welcome__greeting">Good morning, Priya 👋</p>
+            <h1 class="dash-welcome__heading">Admin Dashboard</h1>
+            <p class="dash-welcome__sub">Here's what's happening with GlowVeda today.</p>
+          </div>
+          <div class="dash-welcome__meta">
+            <span class="dash-welcome__date" id="dash-date"></span>
+            <a href="../home-1/home.html" class="dash-btn dash-btn--outline" target="_blank" rel="noopener">
+              <i data-lucide="external-link"></i> View Website
+            </a>
+          </div>
+        </div>
+
+        <!-- KPI Metric Cards -->
+        <div class="dash-metrics" role="list" aria-label="Key performance metrics">
+
+          <div class="dash-metric-card dash-metric-card--green" role="listitem">
+            <div class="dash-metric-card__header">
+              <div class="dash-metric-card__icon-wrap">
+                <i data-lucide="indian-rupee"></i>
+              </div>
+              <span class="dash-metric-card__trend dash-metric-card__trend--up">
+                <i data-lucide="trending-up"></i> +18.4%
+              </span>
+            </div>
+            <div class="dash-metric-card__body">
+              <p class="dash-metric-card__label">Total Revenue</p>
+              <p class="dash-metric-card__value">₹4,82,360</p>
+              <p class="dash-metric-card__sub">vs ₹4,07,200 last month</p>
+            </div>
+            <div class="dash-metric-card__sparkline" aria-hidden="true">
+              <svg viewBox="0 0 120 40" preserveAspectRatio="none">
+                <polyline points="0,35 20,28 40,32 60,20 80,15 100,10 120,5"
+                  fill="none" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+                <polyline points="0,35 20,28 40,32 60,20 80,15 100,10 120,5 120,40 0,40"
+                  fill="currentColor" opacity="0.1"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="dash-metric-card dash-metric-card--gold" role="listitem">
+            <div class="dash-metric-card__header">
+              <div class="dash-metric-card__icon-wrap">
+                <i data-lucide="shopping-bag"></i>
+              </div>
+              <span class="dash-metric-card__trend dash-metric-card__trend--up">
+                <i data-lucide="trending-up"></i> +9.2%
+              </span>
+            </div>
+            <div class="dash-metric-card__body">
+              <p class="dash-metric-card__label">Total Orders</p>
+              <p class="dash-metric-card__value">1,248</p>
+              <p class="dash-metric-card__sub">156 new this week</p>
+            </div>
+            <div class="dash-metric-card__sparkline" aria-hidden="true">
+              <svg viewBox="0 0 120 40" preserveAspectRatio="none">
+                <polyline points="0,30 20,25 40,28 60,18 80,22 100,12 120,8"
+                  fill="none" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+                <polyline points="0,30 20,25 40,28 60,18 80,22 100,12 120,8 120,40 0,40"
+                  fill="currentColor" opacity="0.1"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="dash-metric-card dash-metric-card--leaf" role="listitem">
+            <div class="dash-metric-card__header">
+              <div class="dash-metric-card__icon-wrap">
+                <i data-lucide="users"></i>
+              </div>
+              <span class="dash-metric-card__trend dash-metric-card__trend--up">
+                <i data-lucide="trending-up"></i> +24.1%
+              </span>
+            </div>
+            <div class="dash-metric-card__body">
+              <p class="dash-metric-card__label">Total Customers</p>
+              <p class="dash-metric-card__value">52,840</p>
+              <p class="dash-metric-card__sub">+842 this month</p>
+            </div>
+            <div class="dash-metric-card__sparkline" aria-hidden="true">
+              <svg viewBox="0 0 120 40" preserveAspectRatio="none">
+                <polyline points="0,38 20,32 40,30 60,24 80,18 100,12 120,6"
+                  fill="none" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+                <polyline points="0,38 20,32 40,30 60,24 80,18 100,12 120,6 120,40 0,40"
+                  fill="currentColor" opacity="0.1"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="dash-metric-card dash-metric-card--clay" role="listitem">
+            <div class="dash-metric-card__header">
+              <div class="dash-metric-card__icon-wrap">
+                <i data-lucide="refresh-cw"></i>
+              </div>
+              <span class="dash-metric-card__trend dash-metric-card__trend--down">
+                <i data-lucide="trending-down"></i> -2.1%
+              </span>
+            </div>
+            <div class="dash-metric-card__body">
+              <p class="dash-metric-card__label">Subscriptions</p>
+              <p class="dash-metric-card__value">3,184</p>
+              <p class="dash-metric-card__sub">active this month</p>
+            </div>
+            <div class="dash-metric-card__sparkline" aria-hidden="true">
+              <svg viewBox="0 0 120 40" preserveAspectRatio="none">
+                <polyline points="0,10 20,14 40,12 60,18 80,16 100,20 120,24"
+                  fill="none" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+                <polyline points="0,10 20,14 40,12 60,18 80,16 100,20 120,24 120,40 0,40"
+                  fill="currentColor" opacity="0.1"/>
+              </svg>
+            </div>
+          </div>
+
+        </div><!-- /.dash-metrics -->
+
+        <!-- Charts row -->
+        <div class="dash-charts-row">
+
+          <!-- Revenue Chart -->
+          <div class="dash-chart-card" aria-label="Monthly revenue chart">
+            <div class="dash-chart-card__header">
+              <div>
+                <h3 class="dash-chart-card__title">Revenue Overview</h3>
+                <p class="dash-chart-card__sub">Monthly revenue for current year</p>
+              </div>
+              <select class="dash-select" aria-label="Select year" id="revenue-year">
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+              </select>
+            </div>
+            <div class="dash-chart-card__body">
+              <canvas id="revenue-chart" aria-label="Revenue bar chart"></canvas>
+            </div>
+          </div>
+
+          <!-- Orders donut -->
+          <div class="dash-chart-card dash-chart-card--sm" aria-label="Order status chart">
+            <div class="dash-chart-card__header">
+              <div>
+                <h3 class="dash-chart-card__title">Order Status</h3>
+                <p class="dash-chart-card__sub">Current breakdown</p>
+              </div>
+            </div>
+            <div class="dash-chart-card__body dash-chart-card__body--donut">
+              <canvas id="orders-chart" aria-label="Order status donut chart"></canvas>
+              <div class="dash-donut-legend" aria-hidden="true">
+                <span class="dash-donut-legend__item"><em style="background:#2F6F4E"></em>Delivered</span>
+                <span class="dash-donut-legend__item"><em style="background:#D4A857"></em>Processing</span>
+                <span class="dash-donut-legend__item"><em style="background:#6BAF92"></em>Pending</span>
+                <span class="dash-donut-legend__item"><em style="background:#EF4444"></em>Cancelled</span>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.dash-charts-row -->
+
+        <!-- Two-column: Recent Orders + Top Products -->
+        <div class="dash-two-col">
+
+          <!-- Recent Orders Table -->
+          <div class="dash-table-card" aria-label="Recent orders">
+            <div class="dash-table-card__header">
+              <h3 class="dash-table-card__title">Recent Orders</h3>
+              <a href="#section-orders" class="dash-link" data-section="orders">View all →</a>
+            </div>
+            <div class="dash-table-wrap">
+              <table class="dash-table" role="table" aria-label="Recent orders table">
+                <thead>
+                  <tr>
+                    <th scope="col">Order ID</th>
+                    <th scope="col">Customer</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="dash-table__id">#GV-4821</td>
+                    <td>Ananya R.</td>
+                    <td>Turmeric Soap Kit</td>
+                    <td class="dash-table__amount">₹1,497</td>
+                    <td><span class="dash-status dash-status--delivered">Delivered</span></td>
+                  </tr>
+                  <tr>
+                    <td class="dash-table__id">#GV-4820</td>
+                    <td>Vikram S.</td>
+                    <td>Sandalwood Body Butter</td>
+                    <td class="dash-table__amount">₹649</td>
+                    <td><span class="dash-status dash-status--processing">Processing</span></td>
+                  </tr>
+                  <tr>
+                    <td class="dash-table__id">#GV-4819</td>
+                    <td>Deepa K.</td>
+                    <td>Subscription Box (Q)</td>
+                    <td class="dash-table__amount">₹1,797</td>
+                    <td><span class="dash-status dash-status--delivered">Delivered</span></td>
+                  </tr>
+                  <tr>
+                    <td class="dash-table__id">#GV-4818</td>
+                    <td>Rahul M.</td>
+                    <td>Neem Face Wash</td>
+                    <td class="dash-table__amount">₹349</td>
+                    <td><span class="dash-status dash-status--pending">Pending</span></td>
+                  </tr>
+                  <tr>
+                    <td class="dash-table__id">#GV-4817</td>
+                    <td>Sunita P.</td>
+                    <td>Rose Hip Serum</td>
+                    <td class="dash-table__amount">₹899</td>
+                    <td><span class="dash-status dash-status--processing">Processing</span></td>
+                  </tr>
+                  <tr>
+                    <td class="dash-table__id">#GV-4816</td>
+                    <td>Arjun D.</td>
+                    <td>DIY Workshop Kit</td>
+                    <td class="dash-table__amount">₹2,999</td>
+                    <td><span class="dash-status dash-status--cancelled">Cancelled</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div><!-- /.dash-table-card -->
+
+          <!-- Top Products + Activity Feed -->
+          <div class="dash-right-col">
+
+            <!-- Top Products -->
+            <div class="dash-card" aria-label="Top selling products">
+              <div class="dash-card__header">
+                <h3 class="dash-card__title">Top Products</h3>
+                <a href="#section-products" class="dash-link" data-section="products">See all →</a>
+              </div>
+              <div class="dash-card__body">
+                <ul class="dash-product-list" aria-label="Top selling products list">
+                  <li class="dash-product-item">
+                    <img src="https://images.unsplash.com/photo-1607006344380-b6775a0824a7?w=60&q=70" alt="Turmeric Neem Soap" class="dash-product-item__img" loading="lazy" />
+                    <div class="dash-product-item__info">
+                      <p class="dash-product-item__name">Turmeric Neem Soap</p>
+                      <p class="dash-product-item__sales">2,140 sold</p>
+                    </div>
+                    <div class="dash-product-item__right">
+                      <p class="dash-product-item__revenue">₹85,600</p>
+                      <div class="dash-product-item__bar">
+                        <div class="dash-product-item__bar-fill" style="width:88%"></div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="dash-product-item">
+                    <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=60&q=70" alt="Sandalwood Body Butter" class="dash-product-item__img" loading="lazy" />
+                    <div class="dash-product-item__info">
+                      <p class="dash-product-item__name">Sandalwood Body Butter</p>
+                      <p class="dash-product-item__sales">1,840 sold</p>
+                    </div>
+                    <div class="dash-product-item__right">
+                      <p class="dash-product-item__revenue">₹71,960</p>
+                      <div class="dash-product-item__bar">
+                        <div class="dash-product-item__bar-fill" style="width:72%"></div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="dash-product-item">
+                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=60&q=70" alt="Rose Hip Face Serum" class="dash-product-item__img" loading="lazy" />
+                    <div class="dash-product-item__info">
+                      <p class="dash-product-item__name">Rose Hip Face Serum</p>
+                      <p class="dash-product-item__sales">1,420 sold</p>
+                    </div>
+                    <div class="dash-product-item__right">
+                      <p class="dash-product-item__revenue">₹63,900</p>
+                      <div class="dash-product-item__bar">
+                        <div class="dash-product-item__bar-fill" style="width:58%"></div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="dash-product-item">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=60&q=70" alt="Monthly Subscription Box" class="dash-product-item__img" loading="lazy" />
+                    <div class="dash-product-item__info">
+                      <p class="dash-product-item__name">Subscription Box</p>
+                      <p class="dash-product-item__sales">984 active</p>
+                    </div>
+                    <div class="dash-product-item__right">
+                      <p class="dash-product-item__revenue">₹68,916</p>
+                      <div class="dash-product-item__bar">
+                        <div class="dash-product-item__bar-fill" style="width:45%"></div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Activity Feed -->
+            <div class="dash-card" aria-label="Recent activity feed">
+              <div class="dash-card__header">
+                <h3 class="dash-card__title">Recent Activity</h3>
+                <span class="dash-badge-live"><span class="dash-live-dot" aria-hidden="true"></span>Live</span>
+              </div>
+              <div class="dash-card__body">
+                <ul class="dash-activity-feed" id="activity-feed" aria-label="Activity items" aria-live="polite">
+                  <li class="dash-activity-item">
+                    <div class="dash-activity-item__icon dash-activity-item__icon--order"><i data-lucide="shopping-bag"></i></div>
+                    <div class="dash-activity-item__text">
+                      <p><strong>Ananya R.</strong> placed order <span class="dash-activity-item__ref">#GV-4821</span></p>
+                      <time class="dash-activity-item__time">2 min ago</time>
+                    </div>
+                  </li>
+                  <li class="dash-activity-item">
+                    <div class="dash-activity-item__icon dash-activity-item__icon--review"><i data-lucide="star"></i></div>
+                    <div class="dash-activity-item__text">
+                      <p><strong>Kavitha M.</strong> left a 5-star review</p>
+                      <time class="dash-activity-item__time">15 min ago</time>
+                    </div>
+                  </li>
+                  <li class="dash-activity-item">
+                    <div class="dash-activity-item__icon dash-activity-item__icon--sub"><i data-lucide="refresh-cw"></i></div>
+                    <div class="dash-activity-item__text">
+                      <p><strong>Deepa K.</strong> renewed quarterly subscription</p>
+                      <time class="dash-activity-item__time">34 min ago</time>
+                    </div>
+                  </li>
+                  <li class="dash-activity-item">
+                    <div class="dash-activity-item__icon dash-activity-item__icon--msg"><i data-lucide="message-square"></i></div>
+                    <div class="dash-activity-item__text">
+                      <p><strong>Ravi P.</strong> sent a wholesale enquiry</p>
+                      <time class="dash-activity-item__time">1 hr ago</time>
+                    </div>
+                  </li>
+                  <li class="dash-activity-item">
+                    <div class="dash-activity-item__icon dash-activity-item__icon--stock"><i data-lucide="alert-triangle"></i></div>
+                    <div class="dash-activity-item__text">
+                      <p><strong>Neem Face Wash</strong> low stock alert — 12 units left</p>
+                      <time class="dash-activity-item__time">2 hr ago</time>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div><!-- /.dash-right-col -->
+        </div><!-- /.dash-two-col -->
+
+        <!-- Traffic + Customer geo row -->
+        <div class="dash-charts-row">
+
+          <!-- Traffic line chart -->
+          <div class="dash-chart-card" aria-label="Website traffic chart">
+            <div class="dash-chart-card__header">
+              <div>
+                <h3 class="dash-chart-card__title">Website Traffic</h3>
+                <p class="dash-chart-card__sub">Visitors this week vs last week</p>
+              </div>
+              <div class="dash-chart-card__legend">
+                <span class="dash-legend-item"><em style="background:#2F6F4E"></em>This Week</span>
+                <span class="dash-legend-item"><em style="background:#A8C3A0;border-style:dashed"></em>Last Week</span>
+              </div>
+            </div>
+            <div class="dash-chart-card__body">
+              <canvas id="traffic-chart" aria-label="Traffic line chart"></canvas>
+            </div>
+          </div>
+
+          <!-- Quick stats column -->
+          <div class="dash-quick-stats" aria-label="Quick statistics">
+            <h3 class="dash-quick-stats__title">Quick Stats</h3>
+
+            <div class="dash-quick-stat-item">
+              <div class="dash-quick-stat-item__icon" style="background:rgba(47,111,78,0.1);color:#2F6F4E;">
+                <i data-lucide="percent"></i>
+              </div>
+              <div>
+                <p class="dash-quick-stat-item__label">Conversion Rate</p>
+                <p class="dash-quick-stat-item__value">4.82%</p>
+              </div>
+              <span class="dash-quick-stat-item__trend up">↑ 0.4%</span>
+            </div>
+
+            <div class="dash-quick-stat-item">
+              <div class="dash-quick-stat-item__icon" style="background:rgba(212,168,87,0.1);color:#D4A857;">
+                <i data-lucide="clock"></i>
+              </div>
+              <div>
+                <p class="dash-quick-stat-item__label">Avg. Order Value</p>
+                <p class="dash-quick-stat-item__value">₹1,248</p>
+              </div>
+              <span class="dash-quick-stat-item__trend up">↑ ₹86</span>
+            </div>
+
+            <div class="dash-quick-stat-item">
+              <div class="dash-quick-stat-item__icon" style="background:rgba(107,175,146,0.1);color:#6BAF92;">
+                <i data-lucide="repeat"></i>
+              </div>
+              <div>
+                <p class="dash-quick-stat-item__label">Repeat Buyer Rate</p>
+                <p class="dash-quick-stat-item__value">68.4%</p>
+              </div>
+              <span class="dash-quick-stat-item__trend up">↑ 3.2%</span>
+            </div>
+
+            <div class="dash-quick-stat-item">
+              <div class="dash-quick-stat-item__icon" style="background:rgba(239,68,68,0.08);color:#EF4444;">
+                <i data-lucide="x-circle"></i>
+              </div>
+              <div>
+                <p class="dash-quick-stat-item__label">Return Rate</p>
+                <p class="dash-quick-stat-item__value">1.3%</p>
+              </div>
+              <span class="dash-quick-stat-item__trend down">↑ 0.2%</span>
+            </div>
+
+            <div class="dash-quick-stat-item">
+              <div class="dash-quick-stat-item__icon" style="background:rgba(47,111,78,0.08);color:#2F6F4E;">
+                <i data-lucide="star"></i>
+              </div>
+              <div>
+                <p class="dash-quick-stat-item__label">Avg. Review Score</p>
+                <p class="dash-quick-stat-item__value">4.87 / 5</p>
+              </div>
+              <span class="dash-quick-stat-item__trend up">↑ 0.03</span>
+            </div>
+
+            <div class="dash-quick-stat-item">
+              <div class="dash-quick-stat-item__icon" style="background:rgba(212,168,87,0.1);color:#D4A857;">
+                <i data-lucide="package"></i>
+              </div>
+              <div>
+                <p class="dash-quick-stat-item__label">Pending Shipments</p>
+                <p class="dash-quick-stat-item__value">48</p>
+              </div>
+              <span class="dash-quick-stat-item__trend down">↑ 6</span>
+            </div>
+
+          </div><!-- /.dash-quick-stats -->
+        </div>
+
+      </section><!-- /#section-overview -->
+
+
+      <!-- ══════════════════════════════════════════════
+           SECTION: ANALYTICS
+      ══════════════════════════════════════════════ -->
+      <section class="dash-section" id="section-analytics" aria-label="Analytics">
+        <div class="dash-section__head">
+          <h2 class="dash-section__title">Analytics</h2>
+          <p class="dash-section__sub">Deep dive into GlowVeda's performance data.</p>
+        </div>
+        <div class="dash-placeholder-grid">
+          <div class="dash-placeholder-card">
+            <i data-lucide="bar-chart-3"></i>
+            <h4>Sales Analytics</h4>
+            <p>Detailed sales breakdown by product, category, region and channel with export options.</p>
+          </div>
+          <div class="dash-placeholder-card">
+            <i data-lucide="users"></i>
+            <h4>Customer Analytics</h4>
+            <p>Cohort analysis, LTV calculations, churn prediction and acquisition channel breakdown.</p>
+          </div>
+          <div class="dash-placeholder-card">
+            <i data-lucide="globe"></i>
+            <h4>Traffic Analytics</h4>
+            <p>Page views, sessions, bounce rate, top landing pages, geo distribution and device splits.</p>
+          </div>
+          <div class="dash-placeholder-card">
+            <i data-lucide="trending-up"></i>
+            <h4>Conversion Funnel</h4>
+            <p>End-to-end conversion funnel from visit → cart → checkout → payment → fulfilment.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ══════════════════════════════════════════════
+           SECTION: ORDERS
+      ══════════════════════════════════════════════ -->
+      <section class="dash-section" id="section-orders" aria-label="Orders management">
+        <div class="dash-section__head">
+          <h2 class="dash-section__title">Orders</h2>
+          <div class="dash-section__head-actions">
+            <span class="dash-badge-alert">12 need attention</span>
+            <button class="dash-btn dash-btn--primary"><i data-lucide="download"></i> Export CSV</button>
+          </div>
+        </div>
+        <!-- Orders filter bar -->
+        <div class="dash-filter-bar">
+          <input type="search" class="dash-filter-input" placeholder="Search order ID or customer…" aria-label="Search orders" />
+          <select class="dash-select" aria-label="Filter by status">
+            <option>All Status</option>
+            <option>Delivered</option>
+            <option>Processing</option>
+            <option>Pending</option>
+            <option>Cancelled</option>
+          </select>
+          <select class="dash-select" aria-label="Filter by date range">
+            <option>Last 30 days</option>
+            <option>Last 7 days</option>
+            <option>This year</option>
+            <option>Custom</option>
+          </select>
+        </div>
+        <div class="dash-table-card">
+          <div class="dash-table-wrap">
+            <table class="dash-table" role="table" aria-label="Full orders table">
+              <thead>
+                <tr>
+                  <th scope="col"><input type="checkbox" aria-label="Select all orders" /></th>
+                  <th scope="col">Order ID</th>
+                  <th scope="col">Customer</th>
+                  <th scope="col">Products</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox" aria-label="Select order GV-4821" /></td>
+                  <td class="dash-table__id">#GV-4821</td><td>Ananya R.</td><td>Turmeric Soap Kit ×3</td><td>27 Mar 2024</td>
+                  <td class="dash-table__amount">₹1,497</td><td><span class="dash-status dash-status--delivered">Delivered</span></td>
+                  <td class="dash-table__actions"><button class="dash-tbl-btn" aria-label="View order GV-4821"><i data-lucide="eye"></i></button><button class="dash-tbl-btn" aria-label="Edit order GV-4821"><i data-lucide="edit-3"></i></button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" aria-label="Select order GV-4820" /></td>
+                  <td class="dash-table__id">#GV-4820</td><td>Vikram S.</td><td>Sandalwood Body Butter</td><td>27 Mar 2024</td>
+                  <td class="dash-table__amount">₹649</td><td><span class="dash-status dash-status--processing">Processing</span></td>
+                  <td class="dash-table__actions"><button class="dash-tbl-btn" aria-label="View order"><i data-lucide="eye"></i></button><button class="dash-tbl-btn" aria-label="Edit order"><i data-lucide="edit-3"></i></button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" aria-label="Select order GV-4819" /></td>
+                  <td class="dash-table__id">#GV-4819</td><td>Deepa K.</td><td>Subscription Box (Quarterly)</td><td>26 Mar 2024</td>
+                  <td class="dash-table__amount">₹1,797</td><td><span class="dash-status dash-status--delivered">Delivered</span></td>
+                  <td class="dash-table__actions"><button class="dash-tbl-btn" aria-label="View order"><i data-lucide="eye"></i></button><button class="dash-tbl-btn" aria-label="Edit order"><i data-lucide="edit-3"></i></button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" aria-label="Select order GV-4818" /></td>
+                  <td class="dash-table__id">#GV-4818</td><td>Rahul M.</td><td>Neem Face Wash ×2</td><td>26 Mar 2024</td>
+                  <td class="dash-table__amount">₹698</td><td><span class="dash-status dash-status--pending">Pending</span></td>
+                  <td class="dash-table__actions"><button class="dash-tbl-btn" aria-label="View order"><i data-lucide="eye"></i></button><button class="dash-tbl-btn dash-tbl-btn--danger" aria-label="Cancel order"><i data-lucide="x"></i></button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" aria-label="Select order GV-4817" /></td>
+                  <td class="dash-table__id">#GV-4817</td><td>Sunita P.</td><td>Rose Hip Serum</td><td>25 Mar 2024</td>
+                  <td class="dash-table__amount">₹899</td><td><span class="dash-status dash-status--processing">Processing</span></td>
+                  <td class="dash-table__actions"><button class="dash-tbl-btn" aria-label="View order"><i data-lucide="eye"></i></button><button class="dash-tbl-btn" aria-label="Edit order"><i data-lucide="edit-3"></i></button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" aria-label="Select order GV-4816" /></td>
+                  <td class="dash-table__id">#GV-4816</td><td>Arjun D.</td><td>DIY Workshop — Full Day</td><td>24 Mar 2024</td>
+                  <td class="dash-table__amount">₹2,999</td><td><span class="dash-status dash-status--cancelled">Cancelled</span></td>
+                  <td class="dash-table__actions"><button class="dash-tbl-btn" aria-label="View order"><i data-lucide="eye"></i></button><button class="dash-tbl-btn" aria-label="Refund order"><i data-lucide="rotate-ccw"></i></button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Pagination -->
+          <div class="dash-pagination">
+            <span class="dash-pagination__info">Showing 1–6 of 1,248 orders</span>
+            <div class="dash-pagination__btns">
+              <button class="dash-page-btn" disabled aria-label="Previous page"><i data-lucide="chevron-left"></i></button>
+              <button class="dash-page-btn dash-page-btn--active" aria-current="page">1</button>
+              <button class="dash-page-btn">2</button>
+              <button class="dash-page-btn">3</button>
+              <span>…</span>
+              <button class="dash-page-btn">208</button>
+              <button class="dash-page-btn" aria-label="Next page"><i data-lucide="chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ══════════════════════════════════════════════
+           SECTION: PRODUCTS
+      ══════════════════════════════════════════════ -->
+      <section class="dash-section" id="section-products" aria-label="Product management">
+        <div class="dash-section__head">
+          <h2 class="dash-section__title">Products</h2>
+          <button class="dash-btn dash-btn--primary"><i data-lucide="plus"></i> Add Product</button>
+        </div>
+        <div class="dash-placeholder-grid">
+          <div class="dash-placeholder-card">
+            <i data-lucide="package"></i>
+            <h4>Product Catalogue</h4>
+            <p>Add, edit, and manage all 80+ GlowVeda product SKUs with images, pricing, descriptions and ingredient lists.</p>
+          </div>
+          <div class="dash-placeholder-card">
+            <i data-lucide="tag"></i>
+            <h4>Categories & Tags</h4>
+            <p>Manage skin-type tags, ingredient labels, collections (soaps, serums, kits) and seasonal campaign tags.</p>
+          </div>
+          <div class="dash-placeholder-card">
+            <i data-lucide="image"></i>
+            <h4>Media Library</h4>
+            <p>Upload and organise product images, ingredient photography and lifestyle shoot assets with alt-text management.</p>
+          </div>
+          <div class="dash-placeholder-card">
+            <i data-lucide="percent"></i>
+            <h4>Pricing & Discounts</h4>
+            <p>Set base prices, bulk discount tiers, coupon codes, flash sale overrides and subscription pricing rules.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ══════════════════════════════════════════════
+           SECTION: INVENTORY
+      ══════════════════════════════════════════════ -->
+      <section class="dash-section" id="section-inventory" aria-label="Inventory management">
+        <div class="dash-section__head">
+          <h2 class="dash-section__title">Inventory</h2>
+          <div class="dash-section__head-actions">
+            <span class="dash-badge-alert">3 low stock</span>
+            <button class="dash-btn dash-btn--outline"><i data-lucide="download"></i> Export</button>
+          </div>
+        </div>
+        <!-- Low stock alerts -->
+        <div class="dash-alert-strip" role="alert">
+          <i data-lucide="alert-triangle"></i>
+          <strong>Low Stock Alerts:</strong>
+          Neem Face Wash (12 units) · Aloe Vera Gel (8 units) · Sandalwood Powder (5 units)
+          <button class="dash-alert-strip__dismiss" aria-label="Dismiss alert"><i data-lucide="x"></i></button>
+        </div>
+        <div class="dash-placeholder-grid">
+          <div class="dash-placeholder-card">
+            <i data-lucide="archive"></i>
+            <h4>Stock Levels</h4>
+            <p>Real-time inventory count for all SKUs with automatic low-stock alerts and reorder triggers.</p>
+          </div>
+          <div class="dash-placeholder-card">
+            <i data-lucide="truck"></i>
+            <h4>Supplier Orders</h4>
+            <p>Manage raw ingredient purchase orders from partner farms and track delivery status.</p>
+          </div>
+          <div class="dash-placeholder-card">
+            <i data-lucide="flask-conical"></i>
+            <h4>Batch Production</h4>
+            <p>Track each handcrafted production batch, curing progress, QC sign-off and finished goods.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ══════════════════════════════════════════════
+           SECTION: SUBSCRIPTIONS
+      ══════════════════════════════════════════════ -->
+      <section class="dash-section" id="section-subscriptions" aria-label="Subscription management">
+        <div class="dash-section__head">
+          <h2 class="dash-section__title">Subscriptions</h2>
+          <p class="dash-section__sub">3,184 active subscribers · ₹2,22,880 MRR</p>
+        </div>
+        <div class="dash-placeholder-grid">
+          <div class="dash-placeholder-card">
+            <i data-lucide="refresh-cw"></i>
+            <h4>Active Subscriptions</h4>
+            <p>View and manage all active monthly, quarterly and annual subscribers with renewal dates and plan details.</p>
+          </div>
+          <div class="dash-placeholder-card">
+            <i data-lucide="pause-circle"></i>
+            <h4>Paused & Cancelled</h4>
+            <p>Review and re-engage paused subscribers. Analyse cancellation reasons and win-back campaign results.</p>
+          </div>
+          <div class="dash-placeholder-card">
+            <i data-lucide="send"></i>
+            <h4>Box Curation</h4>
+            <p>Build and approve the monthly box contents by skin-type segment before dispatch cutoff on the 25th.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ══════════════════════════════════════════════
+           SECTION: CUSTOMERS
+      ══════════════════════════════════════════════ -->
+      <section class="dash-section" id="section-customers" aria-label="Customer management">
+        <div class="dash-section__head">
+          <h2 class="dash-section__title">Customers</h2>
+          <button class="dash-btn dash-btn--outline"><i data-lucide="download"></i> Export</button>
+        </div>
+        <div class="dash-filter-bar">
+          <input type="search" class="dash-filter-input" placeholder="Search by name, email or phone…" aria-label="Search customers" />
+          <select class="dash-select" aria-label="Filter by type">
+            <option>All Customers</option>
+            <option>Subscribers</option>
+            <option>B2B Partners</option>
+            <option>One-time Buyers</option>
+          </select>
+        </div>
+        <div class="dash-table-card">
+          <div class="dash-table-wrap">
+            <table class="dash-table" role="table" aria-label="Customer list">
+              <thead>
+                <tr>
+                  <th scope="col">Customer</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Orders</th>
+                  <th scope="col">Total Spend</th>
+                  <th scope="col">Type</th>
+                  <th scope="col">Joined</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="dash-table__customer"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=40&q=70" alt="Ananya R." width="32" height="32" /><span>Ananya R.</span></td>
+                  <td>ananya@email.com</td><td>28</td><td class="dash-table__amount">₹24,560</td><td><span class="dash-status dash-status--delivered">Subscriber</span></td><td>Jan 2022</td>
+                  <td class="dash-table__actions"><button class="dash-tbl-btn" aria-label="View customer"><i data-lucide="eye"></i></button></td>
+                </tr>
+                <tr>
+                  <td class="dash-table__customer"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=40&q=70" alt="Vikram S." width="32" height="32" /><span>Vikram S.</span></td>
+                  <td>vikram@email.com</td><td>14</td><td class="dash-table__amount">₹11,240</td><td><span class="dash-status dash-status--processing">One-time</span></td><td>Jun 2023</td>
+                  <td class="dash-table__actions"><button class="dash-tbl-btn" aria-label="View customer"><i data-lucide="eye"></i></button></td>
+                </tr>
+                <tr>
+                  <td class="dash-table__customer"><img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=40&q=70" alt="Deepa K." width="32" height="32" /><span>Deepa K.</span></td>
+                  <td>deepa@email.com</td><td>42</td><td class="dash-table__amount">₹38,940</td><td><span class="dash-status dash-status--delivered">Subscriber</span></td><td>Mar 2021</td>
+                  <td class="dash-table__actions"><button class="dash-tbl-btn" aria-label="View customer"><i data-lucide="eye"></i></button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ══════════════════════════════════════════════
+           SECTION: REVIEWS
+      ══════════════════════════════════════════════ -->
+      <section class="dash-section" id="section-reviews" aria-label="Reviews moderation">
+        <div class="dash-section__head">
+          <h2 class="dash-section__title">Reviews Moderation</h2>
+          <span class="dash-badge-alert">5 pending approval</span>
+        </div>
+        <div class="dash-placeholder-grid">
+          <div class="dash-placeholder-card">
+            <i data-lucide="star"></i>
+            <h4>Pending Reviews</h4>
+            <p>5 reviews awaiting approval. Review content, flag inappropriate submissions, approve or reject.</p>
+          </div>
+          <div class="dash-placeholder-card">
+            <i data-lucide="check-circle-2"></i>
+            <h4>Published Reviews</h4>
+            <p>All live reviews across your product pages. Edit, pin featured reviews, or remove outdated ones.</p>
+          </div>
+          <div class="dash-placeholder-card">
+            <i data-lucide="bar-chart-2"></i>
+            <h4>Review Analytics</h4>
+            <p>Average ratings by product, sentiment analysis, review velocity and NPS trend over time.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ══════════════════════════════════════════════
+           SECTION: MESSAGES
+      ══════════════════════════════════════════════ -->
+      <section class="dash-section" id="section-messages" aria-label="Customer messages">
+        <div class="dash-section__head">
+          <h2 class="dash-section__title">Messages</h2>
+          <span class="dash-badge-alert">3 unread</span>
+        </div>
+        <div class="dash-placeholder-grid">
+          <div class="dash-placeholder-card">
+            <i data-lucide="inbox"></i>
+            <h4>Customer Enquiries</h4>
+            <p>All contact form submissions, consultation requests, and wholesale enquiries in one inbox.</p>
+          </div>
+          <div class="dash-placeholder-card">
+            <i data-lucide="message-square"></i>
+            <h4>Live Chat History</h4>
+            <p>View and respond to past and active customer chat sessions with full conversation context.</p>
+          </div>
+          <div class="dash-placeholder-card">
+            <i data-lucide="mail"></i>
+            <h4>Email Campaigns</h4>
+            <p>Draft, schedule and track email newsletters, subscriber onboarding sequences and re-engagement campaigns.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ══════════════════════════════════════════════
+           SECTION: BLOG CMS
+      ══════════════════════════════════════════════ -->
+      <section class="dash-section" id="section-blog" aria-label="Blog content management">
+        <div class="dash-section__head">
+          <h2 class="dash-section__title">Blog CMS</h2>
+          <button class="dash-btn dash-btn--primary"><i data-lucide="plus"></i> New Post</button>
+        </div>
+        <div class="dash-placeholder-grid">
+          <div class="dash-placeholder-card">
+            <i data-lucide="edit-3"></i>
+            <h4>Draft Posts</h4>
+            <p>4 blog drafts in progress. Continue editing skincare tips, Ayurveda guides and ingredient spotlights.</p>
+          </div>
+          <div class="dash-placeholder-card">
+            <i data-lucide="globe"></i>
+            <h4>Published Posts</h4>
+            <p>Manage 48 live blog articles. Edit content, update SEO meta, add new images or schedule republishes.</p>
+          </div>
+          <div class="dash-placeholder-card">
+            <i data-lucide="calendar"></i>
+            <h4>Content Calendar</h4>
+            <p>Plan and schedule upcoming blog content, DIY tutorials and ingredient story features month by month.</p>
+          </div>
+          <div class="dash-placeholder-card">
+            <i data-lucide="trending-up"></i>
+            <h4>SEO Performance</h4>
+            <p>Track keyword rankings, organic traffic, click-through rates and backlink growth for all blog posts.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ══════════════════════════════════════════════
+           SECTION: SERVICES
+      ══════════════════════════════════════════════ -->
+      <section class="dash-section" id="section-services" aria-label="Services management">
+        <div class="dash-section__head">
+          <h2 class="dash-section__title">Services</h2>
+          <p class="dash-section__sub">Manage your 6 core service offerings and bookings.</p>
+        </div>
+        <div class="dash-placeholder-grid">
+          <div class="dash-placeholder-card">
+            <i data-lucide="calendar-check"></i>
+            <h4>Booking Requests</h4>
+            <p>New consultation and workshop booking enquiries awaiting confirmation. Assign slots and respond.</p>
+          </div>
+          <div class="dash-placeholder-card">
+            <i data-lucide="sparkles"></i>
+            <h4>Service Listings</h4>
+            <p>Edit descriptions, pricing, FAQs and availability for all 6 service detail pages.</p>
+          </div>
+          <div class="dash-placeholder-card">
+            <i data-lucide="users"></i>
+            <h4>Workshop Roster</h4>
+            <p>View upcoming workshop registrations, manage waitlists and send pre-workshop communication.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ══════════════════════════════════════════════
+           SECTION: SETTINGS
+      ══════════════════════════════════════════════ -->
+      <section class="dash-section" id="section-settings" aria-label="System settings">
+        <div class="dash-section__head">
+          <h2 class="dash-section__title">Settings</h2>
+        </div>
+        <div class="dash-placeholder-grid">
+          <div class="dash-placeholder-card">
+            <i data-lucide="user"></i>
+            <h4>Admin Profile</h4>
+            <p>Update your name, email, password, two-factor authentication and notification preferences.</p>
+          </div>
+          <div class="dash-placeholder-card">
+            <i data-lucide="store"></i>
+            <h4>Store Settings</h4>
+            <p>Configure store name, currency, GST rates, shipping zones, payment gateways and tax settings.</p>
+          </div>
+          <div class="dash-placeholder-card">
+            <i data-lucide="shield-check"></i>
+            <h4>Security</h4>
+            <p>Manage admin roles and permissions, view login history, API keys and connected integrations.</p>
+          </div>
+          <div class="dash-placeholder-card">
+            <i data-lucide="bell"></i>
+            <h4>Notification Rules</h4>
+            <p>Configure which events trigger admin notifications — orders, reviews, stock alerts and messages.</p>
+          </div>
+        </div>
+      </section>
+
+    </main><!-- /.dash-content -->
+  </div><!-- /.dash-body -->
+</div><!-- /.dash-app -->
+
+<!-- Mobile sidebar overlay -->
+<div class="dash-mobile-overlay" id="mobile-overlay" aria-hidden="true"></div>
+
+<!-- Dashboard JS -->
+<script src="dashboard.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+</script>
+</body>
+</html>

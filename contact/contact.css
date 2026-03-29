@@ -1,0 +1,918 @@
+/* ============================================================
+   GlowVeda — Contact Page Stylesheet
+   contact/contact.css
+   Version: 1.0.0
+   ============================================================
+   TABLE OF CONTENTS:
+   01. Contact Hero
+   02. Contact Info Strip / Cards
+   03. Contact Main Section (Form + Side)
+   04. Contact Form Card
+   05. Skin Type Pills
+   06. Message Character Counter
+   07. Contact Side Panel
+   08. Map Placeholder
+   09. Social Links Card
+   10. FAQ Quick Links Card
+   11. FAQ Accordion Section
+   12. Expert CTA Banner
+   13. Back to Top
+   14. Responsive Overrides
+   ============================================================ */
+
+
+/* ============================================================
+   01. CONTACT HERO
+   ============================================================ */
+
+.contact-hero {
+  position: relative;
+  padding-top: calc(var(--nav-height) + var(--space-5));
+  padding-bottom: var(--space-6);
+  background: var(--bg-body);
+  overflow: hidden;
+}
+
+/* Decorative gradient blobs */
+.contact-hero__blob-1 {
+  width: 480px;
+  height: 480px;
+  top: -80px;
+  right: -120px;
+  background: rgba(107, 175, 146, 0.14);
+}
+
+.contact-hero__blob-2 {
+  width: 320px;
+  height: 320px;
+  bottom: -60px;
+  left: -80px;
+  background: rgba(212, 168, 87, 0.10);
+}
+
+/* Decorative pattern overlay */
+.contact-hero__pattern {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(47, 111, 78, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(212, 168, 87, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.contact-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Breadcrumb spacing */
+.contact-hero .breadcrumb {
+  margin-bottom: var(--space-3);
+}
+
+.contact-hero .breadcrumb .breadcrumb-sep svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Hero content */
+.contact-hero__content {
+  max-width: 640px;
+}
+
+.contact-hero__content h1 {
+  margin: var(--space-1) 0 var(--space-2);
+}
+
+.contact-hero__content .text-lead {
+  max-width: 540px;
+}
+
+
+/* ============================================================
+   02. CONTACT INFO STRIP / CARDS
+   ============================================================ */
+
+.contact-info-strip {
+  border-bottom: var(--border-width) solid var(--border-color-soft);
+}
+
+/* 4-column grid, collapses responsively */
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
+}
+
+/* Individual card */
+.contact-info-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  background: var(--bg-card);
+  border: var(--border-width) solid var(--border-color-soft);
+  border-radius: var(--radius-xl);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.contact-info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-secondary);
+}
+
+/* Icon wrapper */
+.contact-info-card__icon {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: var(--radius-lg);
+  background: rgba(47, 111, 78, 0.10);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.contact-info-card__icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.contact-info-card__icon--gold {
+  background: rgba(212, 168, 87, 0.12);
+  color: var(--color-accent);
+}
+
+.contact-info-card__icon--sage {
+  background: rgba(168, 195, 160, 0.20);
+  color: var(--color-primary-light);
+}
+
+.contact-info-card__icon--clay {
+  background: rgba(164, 113, 72, 0.12);
+  color: var(--color-clay);
+}
+
+.contact-info-card:hover .contact-info-card__icon {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.contact-info-card:hover .contact-info-card__icon--gold {
+  background: var(--color-accent);
+}
+
+.contact-info-card:hover .contact-info-card__icon--sage {
+  background: var(--color-primary-light);
+}
+
+.contact-info-card:hover .contact-info-card__icon--clay {
+  background: var(--color-clay);
+}
+
+/* Card body */
+.contact-info-card__body h3 {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+.contact-info-card__value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--font-medium);
+  color: var(--color-text-heading);
+  margin-bottom: 2px;
+  line-height: var(--leading-snug);
+  transition: color var(--transition-fast);
+}
+
+a.contact-info-card__value:hover {
+  color: var(--color-primary);
+}
+
+.contact-info-card__body p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-normal);
+}
+
+
+/* ============================================================
+   03. CONTACT MAIN SECTION (Form + Side)
+   ============================================================ */
+
+.contact-main__grid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: var(--space-5);
+  align-items: start;
+}
+
+
+/* ============================================================
+   04. CONTACT FORM CARD
+   ============================================================ */
+
+.contact-form-card {
+  background: var(--bg-surface);
+  border: var(--border-width) solid var(--border-color-soft);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+/* Card header area */
+.contact-form-card__header {
+  padding: var(--space-4) var(--space-4) var(--space-3);
+  background: var(--gradient-sand);
+  border-bottom: var(--border-width) solid var(--border-color-soft);
+}
+
+.contact-form-card__header h2 {
+  font-size: clamp(var(--text-2xl), 3vw, var(--text-4xl));
+  margin: var(--space-1) 0 10px;
+}
+
+.contact-form-card__header p {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+}
+
+/* The form itself */
+.contact-form {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Two-column row */
+.contact-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+}
+
+/* Submit button full width */
+.contact-form__submit {
+  width: 100%;
+  justify-content: center;
+  padding: 16px 32px;
+  font-size: var(--text-base);
+  margin-top: var(--space-1);
+}
+
+/* Form error state for inputs */
+.form-control.error {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Check label text */
+.form-check-label {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+
+/* ============================================================
+   05. SKIN TYPE PILLS
+   ============================================================ */
+
+.skin-type-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.skin-pill {
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  border: var(--border-width-2) solid var(--border-color);
+  background: var(--bg-surface);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-bounce);
+}
+
+.skin-pill:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+.skin-pill.selected,
+.skin-pill[aria-pressed="true"] {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.skin-pill:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+
+/* ============================================================
+   06. MESSAGE CHARACTER COUNTER
+   ============================================================ */
+
+.message-counter {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-align: right;
+  margin-top: 4px;
+  transition: color var(--transition-fast);
+}
+
+.message-counter.near-limit {
+  color: var(--color-warning);
+}
+
+.message-counter.at-limit {
+  color: var(--color-error);
+  font-weight: var(--font-semibold);
+}
+
+
+/* ============================================================
+   07. CONTACT SIDE PANEL
+   ============================================================ */
+
+.contact-side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  position: sticky;
+  top: calc(var(--nav-height) + var(--space-3));
+}
+
+
+/* ============================================================
+   08. MAP PLACEHOLDER
+   ============================================================ */
+
+.contact-map {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: var(--border-width) solid var(--border-color-soft);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-map__inner {
+  /* Real embed: replace with actual <iframe> Google Maps */
+  height: 280px;
+  background:
+    linear-gradient(135deg, rgba(47, 111, 78, 0.08) 0%, rgba(107, 175, 146, 0.12) 100%),
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 20px,
+      rgba(168, 195, 160, 0.06) 20px,
+      rgba(168, 195, 160, 0.06) 40px
+    );
+  background-color: var(--bg-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-map__placeholder {
+  text-align: center;
+  padding: var(--space-3);
+}
+
+.contact-map__placeholder svg {
+  width: 40px;
+  height: 40px;
+  color: var(--color-primary);
+  margin: 0 auto var(--space-1);
+}
+
+.contact-map__placeholder p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+
+/* ============================================================
+   09. SOCIAL LINKS CARD
+   ============================================================ */
+
+.contact-social-card {
+  background: var(--bg-surface);
+  border: var(--border-width) solid var(--border-color-soft);
+  border-radius: var(--radius-xl);
+  padding: var(--space-3);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-social-card h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--font-medium);
+  color: var(--color-text-heading);
+  margin-bottom: 6px;
+}
+
+.contact-social-card p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+  line-height: var(--leading-relaxed);
+}
+
+.contact-social-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.contact-social-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: var(--radius-lg);
+  border: var(--border-width) solid var(--border-color);
+  background: var(--bg-body);
+  color: var(--color-text-body);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  text-decoration: none;
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-bounce);
+}
+
+.contact-social-link:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.contact-social-link svg {
+  flex-shrink: 0;
+}
+
+
+/* ============================================================
+   10. FAQ QUICK LINKS CARD
+   ============================================================ */
+
+.contact-faq-card {
+  background: var(--bg-surface);
+  border: var(--border-width) solid var(--border-color-soft);
+  border-radius: var(--radius-xl);
+  padding: var(--space-3);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-faq-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--font-medium);
+  color: var(--color-text-heading);
+  margin-bottom: var(--space-2);
+}
+
+.contact-faq-card h3 svg {
+  width: 20px;
+  height: 20px;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.contact-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-faq-link {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    gap var(--transition-fast);
+  line-height: var(--leading-snug);
+}
+
+.contact-faq-link svg {
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  margin-top: 2px;
+  color: var(--color-primary-light);
+  transition: color var(--transition-fast);
+}
+
+.contact-faq-link:hover {
+  background: rgba(47, 111, 78, 0.07);
+  color: var(--color-primary);
+  gap: 14px;
+}
+
+.contact-faq-link:hover svg {
+  color: var(--color-primary);
+}
+
+
+/* ============================================================
+   11. FAQ ACCORDION SECTION
+   ============================================================ */
+
+.contact-faq-section {
+  border-top: var(--border-width) solid var(--border-color-soft);
+}
+
+/* 2-column accordion grid */
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);
+  max-width: 1000px;
+  margin-inline: auto;
+}
+
+/* Accordion item */
+.accordion-item {
+  background: var(--bg-surface);
+  border: var(--border-width) solid var(--border-color-soft);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.accordion-item.open {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Accordion trigger button */
+.accordion-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-heading);
+  line-height: var(--leading-snug);
+  transition: color var(--transition-fast);
+}
+
+.accordion-trigger:hover {
+  color: var(--color-primary);
+}
+
+.accordion-item.open .accordion-trigger {
+  color: var(--color-primary);
+}
+
+/* +/- icon */
+.accordion-icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background: var(--bg-section-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-base);
+}
+
+.accordion-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.accordion-item.open .accordion-icon {
+  background: var(--color-primary);
+  color: var(--color-white);
+  transform: rotate(45deg);
+}
+
+/* Accordion panel */
+.accordion-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion-panel p {
+  padding: 0 var(--space-3) var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+  border-top: var(--border-width) solid var(--border-color-soft);
+  padding-top: var(--space-2);
+}
+
+.accordion-panel p a {
+  color: var(--color-primary);
+}
+
+
+/* ============================================================
+   12. EXPERT CTA BANNER
+   ============================================================ */
+
+.contact-cta {
+  padding: var(--space-7) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-cta__blob {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(47, 111, 78, 0.3) 0%, transparent 70%);
+  top: -150px;
+  right: -100px;
+  pointer-events: none;
+}
+
+.contact-cta__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  position: relative;
+  z-index: 1;
+}
+
+.contact-cta__text {
+  max-width: 520px;
+}
+
+.contact-cta__text h2 {
+  font-size: clamp(var(--text-3xl), 3.5vw, var(--text-5xl));
+  margin: var(--space-1) 0 var(--space-2);
+}
+
+.contact-cta__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.contact-cta__actions .btn {
+  white-space: nowrap;
+  min-width: 240px;
+  justify-content: center;
+}
+
+
+/* ============================================================
+   13. BACK TO TOP
+   ============================================================ */
+
+.back-to-top {
+  position: fixed;
+  bottom: var(--space-3);
+  right: var(--space-3);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity var(--transition-base),
+    transform var(--transition-bounce),
+    background var(--transition-fast);
+  z-index: var(--z-dropdown);
+  pointer-events: none;
+}
+
+.back-to-top svg {
+  width: 20px;
+  height: 20px;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-2px);
+}
+
+
+/* ============================================================
+   14. RESPONSIVE OVERRIDES
+   ============================================================ */
+
+/* Laptop (1024px – 1279px) */
+@media (max-width: 1279px) {
+  .contact-main__grid {
+    grid-template-columns: 1fr 360px;
+    gap: var(--space-4);
+  }
+}
+
+/* Tablet (640px – 1023px) */
+@media (max-width: 1023px) {
+  .contact-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-main__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-side {
+    position: static; /* remove sticky on tablet */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+
+  .contact-map {
+    grid-column: span 2;
+  }
+
+  .contact-cta__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-cta__text {
+    max-width: 100%;
+  }
+
+  .contact-cta__actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile (< 640px) */
+@media (max-width: 639px) {
+  .contact-hero {
+    padding-top: calc(var(--nav-height) + var(--space-3));
+    padding-bottom: var(--space-4);
+  }
+
+  .contact-hero__content h1 {
+    font-size: var(--text-4xl);
+  }
+
+  .contact-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info-card {
+    padding: var(--space-2);
+  }
+
+  .contact-form__row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-card__header {
+    padding: var(--space-3);
+  }
+
+  .contact-form {
+    padding: var(--space-3);
+    gap: var(--space-2);
+  }
+
+  .contact-side {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-map {
+    grid-column: auto;
+  }
+
+  .contact-social-links {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-cta__actions .btn {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .contact-cta__actions {
+    width: 100%;
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .back-to-top {
+    bottom: var(--space-2);
+    right: var(--space-2);
+  }
+}
+
+
+/* ============================================================
+   DARK MODE ADJUSTMENTS
+   ============================================================ */
+
+[data-theme="dark"] .contact-form-card__header {
+  background: var(--bg-surface);
+}
+
+[data-theme="dark"] .contact-map__inner {
+  background-color: var(--bg-card);
+}
+
+[data-theme="dark"] .contact-social-link {
+  background: var(--bg-card);
+}
+
+[data-theme="dark"] .skin-pill {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .accordion-item {
+  background: var(--bg-card);
+}
+
+[data-theme="dark"] .contact-info-card {
+  background: var(--bg-card);
+}
+
+[data-theme="dark"] .contact-faq-card,
+[data-theme="dark"] .contact-social-card {
+  background: var(--bg-card);
+}

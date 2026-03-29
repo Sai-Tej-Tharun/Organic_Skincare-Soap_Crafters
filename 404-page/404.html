@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <!-- ============================================================
+       GlowVeda — 404 Not Found Page
+       Fits viewport — no scroll needed
+       ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>404 — Page Not Found | GlowVeda</title>
+  <meta name="description" content="Oops! This page could not be found. Head back to GlowVeda and discover handcrafted organic skincare." />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="icon" href="../global-images/logo.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="../global-css/global.css" />
+  <link rel="stylesheet" href="../global-css/navbar.css" />
+  <link rel="stylesheet" href="../global-css/footer.css" />
+  <link rel="stylesheet" href="404.css" />
+</head>
+
+<body class="page-404-body">
+
+  <!-- Theme + RTL controls -->
+  <div class="ctrl-bar" role="toolbar" aria-label="Display controls">
+    <button class="ctrl-btn theme-toggle" aria-label="Switch to dark mode" title="Toggle dark mode">
+      <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        aria-hidden="true" style="display:none;">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+      <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
+    <button class="ctrl-btn rtl-toggle" aria-label="Switch to RTL" title="Toggle RTL">
+      <span class="rtl-label">RTL</span>
+    </button>
+  </div>
+
+  <!-- ============================================================
+       MAIN 404 LAYOUT
+       ============================================================ -->
+  <main class="page-404" id="main-content" aria-label="404 error page">
+
+    <!-- Decorative background layer -->
+    <div class="bg-layer" aria-hidden="true">
+      <div class="bg-blob bg-blob--1"></div>
+      <div class="bg-blob bg-blob--2"></div>
+      <div class="bg-blob bg-blob--3"></div>
+      <!-- Floating botanical elements -->
+      <span class="floater floater--1">🌿</span>
+      <span class="floater floater--2">🍃</span>
+      <span class="floater floater--3">🌸</span>
+      <span class="floater floater--4">🌱</span>
+      <span class="floater floater--5">🌿</span>
+    </div>
+
+    <!-- Content -->
+    <div class="error-content">
+
+      <!-- Logo -->
+      <a href="../home-1/home.html" class="error-logo" aria-label="GlowVeda — go home">
+        <img src="../global-images/logo.svg" alt="GlowVeda" />
+      </a>
+
+      <!-- Big illustrated 404 -->
+      <div class="error-number" aria-hidden="true">
+        <span class="en-4 en-left">4</span>
+        <span class="en-zero">
+          <!-- SVG leaf/botanical illustration inside the 0 -->
+          <svg class="en-zero__svg" viewBox="0 0 120 120" fill="none"
+            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <!-- Outer ring -->
+            <circle cx="60" cy="60" r="56" stroke="var(--color-primary)" stroke-width="3" stroke-dasharray="8 6" opacity="0.35"/>
+            <!-- Stem -->
+            <line x1="60" y1="95" x2="60" y2="50" stroke="var(--color-primary-light)" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- Left leaf -->
+            <path d="M60 72 C42 60 32 40 48 28 C54 22 66 28 60 72Z"
+              fill="var(--color-primary)" opacity="0.85"/>
+            <!-- Right leaf -->
+            <path d="M60 65 C78 53 88 33 72 21 C66 15 54 21 60 65Z"
+              fill="var(--color-primary-light)" opacity="0.75"/>
+            <!-- Small petal dots -->
+            <circle cx="44" cy="44" r="3" fill="var(--color-accent)" opacity="0.7"/>
+            <circle cx="76" cy="38" r="2.5" fill="var(--color-accent)" opacity="0.6"/>
+            <circle cx="60" cy="32" r="2" fill="var(--color-accent)" opacity="0.8"/>
+          </svg>
+        </span>
+        <span class="en-4 en-right">4</span>
+      </div>
+
+      <!-- Text -->
+      <div class="error-text">
+        <h1>This page has wandered off</h1>
+        <p>
+          Looks like this page took a walk through the herb garden and got lost.
+          Let's guide you back to something beautiful.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="error-actions">
+        <a href="../home-1/home.html" class="btn-home">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          Back to Home
+        </a>
+        <a href="../contact/contact.html" class="btn-contact">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          Contact Us
+        </a>
+      </div>
+
+      <!-- Popular quick-nav links -->
+      <div class="error-nav" aria-label="Popular pages">
+        <span class="error-nav__label">Or explore →</span>
+        <nav aria-label="Quick navigation">
+          <a href="../home-1/home.html"    class="error-nav__link">Shop</a>
+          <a href="../about/about.html"    class="error-nav__link">About</a>
+          <a href="../blogs/blogs.html"    class="error-nav__link">Blog</a>
+          <a href="../home-2/home.html"    class="error-nav__link">Routines</a>
+        </nav>
+      </div>
+
+    </div><!-- /.error-content -->
+
+  </main>
+
+    <script src="../global-js/global.js"></script>
+  <script src="../global-js/navbar.js" defer></script>
+  <script src="../global-js/footer.js"></script>
+  <script src="404.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+</script>
+</body>
+</html>

@@ -1,0 +1,624 @@
+<!--
+  ============================================================
+  GlowVeda — Footer Component
+  Loaded dynamically via FooterManager.load() in global.js
+  ============================================================
+  Structure:
+  • .footer-certifications  (trust badges strip)
+  • .footer-top             (brand col + 3 link cols)
+  • .footer-newsletter      (full-width newsletter strip)
+  • .footer-bottom          (copyright + legal links)
+  ============================================================
+-->
+
+<footer id="footer" role="contentinfo" aria-label="Site footer">
+
+  <!-- ─── Trust / Certification Strip ─────────────────────── -->
+  <div class="footer-trust-strip">
+    <div class="container">
+      <div class="footer-trust-inner">
+
+        <div class="trust-item">
+          <span class="trust-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </span>
+          <span>100% Natural Ingredients</span>
+        </div>
+
+        <div class="trust-divider" aria-hidden="true"></div>
+
+        <div class="trust-item">
+          <span class="trust-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </span>
+          <span>Handcrafted in Small Batches</span>
+        </div>
+
+        <div class="trust-divider" aria-hidden="true"></div>
+
+        <div class="trust-item">
+          <span class="trust-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+          </span>
+          <span>Cruelty-Free Certified</span>
+        </div>
+
+        <div class="trust-divider" aria-hidden="true"></div>
+
+        <div class="trust-item">
+          <span class="trust-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+          </span>
+          <span>Ayurvedic Formulations</span>
+        </div>
+
+        <div class="trust-divider" aria-hidden="true"></div>
+
+        <div class="trust-item">
+          <span class="trust-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 12 20 22 4 22 4 12"></polyline>
+              <rect x="2" y="7" width="20" height="5"></rect>
+              <line x1="12" y1="22" x2="12" y2="7"></line>
+              <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+              <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+            </svg>
+          </span>
+          <span>Zero Harmful Chemicals</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Footer Top: Brand + Links ────────────────────────── -->
+  <div class="footer-top">
+    <div class="footer-grid">
+
+      <!-- Column 1: Brand / About -->
+      <div class="footer-brand">
+        <a href="../home-1/home.html" aria-label="GlowVeda home">
+          <img
+            src="../global-images/logo.svg"
+            alt="GlowVeda Organic Skincare"
+            class="footer-logo"
+            width="44"
+            height="44"
+            loading="lazy"
+          />
+        </a>
+        <p class="footer-brand-name">
+          <span class="footer-brand-glow">Glow</span>Veda
+        </p>
+        <p>
+          Rooted in Ayurvedic wisdom, crafted with love.
+          We make pure, handmade skincare that honours
+          your skin and the earth.
+        </p>
+
+        <!-- Contact Info -->
+        <address class="footer-contact">
+          <a href="tel:+919876543210" class="footer-contact-item" aria-label="Call us">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.36 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            +91 (987) 654-3210
+          </a>
+          <a href="mailto:hr@glowveda.com" class="footer-contact-item" aria-label="Email us">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            hr@glowveda.com
+          </a>
+        </address>
+
+        <!-- Social Links -->
+        <div class="footer-social" role="list" aria-label="Social media links">
+          <a href="#" class="footer-social-link" role="listitem" aria-label="Follow us on Instagram" rel="noopener noreferrer" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="#" class="footer-social-link" role="listitem" aria-label="Follow us on Facebook" rel="noopener noreferrer" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a href="#" class="footer-social-link" role="listitem" aria-label="Follow us on YouTube" rel="noopener noreferrer" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"></path>
+              <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon>
+            </svg>
+          </a>
+          <a href="#" class="footer-social-link" role="listitem" aria-label="Follow us on Pinterest" rel="noopener noreferrer" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M8 12a4 4 0 1 0 8 0 4 4 0 0 0-8 0"></path>
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path>
+              <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"></path>
+            </svg>
+          </a>
+          <a href="#" class="footer-social-link" role="listitem" aria-label="Follow us on Twitter / X" rel="noopener noreferrer" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4l16 16M4 20L20 4"></path>
+            </svg>
+          </a>
+        </div>
+
+      </div><!-- /.footer-brand -->
+
+      <!-- Column 2: Quick Links -->
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links" role="list">
+          <li>
+            <a href="../home-1/home.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              Home Classic
+            </a>
+          </li>
+          <li>
+            <a href="../home-2/home.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              Home Premium
+            </a>
+          </li>
+          <li>
+            <a href="../about/about.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              About Us
+            </a>
+          </li>
+          <li>
+            <a href="../services/services.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              Our Services
+            </a>
+          </li>
+          <li>
+            <a href="../pricing/pricing.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              Pricing & Plans
+            </a>
+          </li>
+          <li>
+            <a href="../blogs/blogs.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              Blog & Articles
+            </a>
+          </li>
+          <li>
+            <a href="../contact/contact.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Products / Categories -->
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul class="footer-links" role="list">
+          <li>
+            <a href="../service-details/service-details-1.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              Custom Soap Crafting
+            </a>
+          </li>
+          <li>
+            <a href="../service-details/service-details-2.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              Skincare Consultation
+            </a>
+          </li>
+          <li>
+            <a href="../service-details/service-details-3.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              DIY Workshops
+            </a>
+          </li>
+          <li>
+            <a href="../service-details/service-details-4.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              Subscription Box
+            </a>
+          </li>
+          <li>
+            <a href="../service-details/service-details-5.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              Wholesale & Bulk Supply
+            </a>
+          </li>
+          <li>
+            <a href="../service-details/service-details-6.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              Corporate & Personal Gifting
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Newsletter + Help -->
+      <div class="footer-col">
+        <h4>Stay in the Glow</h4>
+        <p class="footer-newsletter-desc">
+          Get skincare tips, Ayurvedic wisdom, and
+          exclusive offers — delivered to your inbox.
+        </p>
+
+        <!-- Newsletter Form -->
+        <form class="footer-newsletter-form" novalidate aria-label="Newsletter subscription">
+          <div class="footer-newsletter-input-wrap">
+            <input
+              type="email"
+              name="newsletter-email"
+              placeholder="Your email address"
+              aria-label="Email address for newsletter"
+              autocomplete="email"
+              required
+            />
+          </div>
+          <button type="submit" class="footer-newsletter-btn" aria-label="Subscribe to newsletter">
+            Subscribe
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </form>
+
+        <!-- Help Links -->
+        <h4 style="margin-top: 28px;">Help & Support</h4>
+        <ul class="footer-links" role="list">
+          <li>
+            <a href="../404-page/404.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              FAQs
+            </a>
+          </li>
+          <li>
+            <a href="../coming-soon/coming-soon.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              Skincare Advice
+            </a>
+          </li>
+          <li>
+            <a href="../admin-dashboard/dashboard.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              Dashboard
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div><!-- /.footer-grid -->
+  </div><!-- /.footer-top -->
+
+  <!-- ─── Footer Bottom: Copyright + Legal ─────────────────── -->
+  <div class="footer-bottom-wrap">
+    <div class="footer-bottom container">
+
+      <p class="footer-copyright">
+        &copy; <span id="footer-year"></span> GlowVeda. All rights reserved.
+        Crafted with <span aria-label="love" role="img">🌿</span> in India.
+      </p>
+
+      <nav class="footer-legal" aria-label="Legal links">
+        <a href="#" class="footer-legal-link">Privacy Policy</a>
+        <span aria-hidden="true" class="footer-legal-sep">·</span>
+        <a href="#" class="footer-legal-link">Terms of Service</a>
+        <span aria-hidden="true" class="footer-legal-sep">·</span>
+        <a href="#" class="footer-legal-link">Cookie Policy</a>
+        <span aria-hidden="true" class="footer-legal-sep">·</span>
+        <a href="../coming-soon/coming-soon.html" class="footer-legal-link">Sitemap</a>
+      </nav>
+
+    </div>
+  </div>
+
+</footer><!-- /#footer -->
+
+<!-- ─── Footer Styles (scoped) ───────────────────────────── -->
+<style>
+  /* ── Trust strip ─────────────────────────────────────────── */
+  .footer-trust-strip {
+    background: rgba(107, 175, 146, 0.12);
+    border-bottom: 1px solid rgba(168, 195, 160, 0.2);
+    padding: 14px 0;
+  }
+
+  .footer-trust-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 0;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--space-3);
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: rgba(200, 223, 196, 0.9);
+    white-space: nowrap;
+    padding: 0 20px;
+  }
+
+  .trust-icon {
+    color: var(--color-accent);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .trust-divider {
+    width: 1px;
+    height: 18px;
+    background: rgba(168, 195, 160, 0.25);
+    flex-shrink: 0;
+  }
+
+  /* ── Brand col extras ────────────────────────────────────── */
+  .footer-brand-name {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin: 10px 0 12px;
+    letter-spacing: -0.02em;
+  }
+
+  .footer-brand-glow {
+    color: var(--color-accent);
+  }
+
+  /* Contact items */
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-style: normal;
+    margin-bottom: 20px;
+  }
+
+  .footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--text-sm);
+    color: rgba(200, 223, 196, 0.7);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .footer-contact-item:hover {
+    color: var(--color-accent);
+  }
+
+  .footer-contact-item svg {
+    color: var(--color-accent);
+    flex-shrink: 0;
+  }
+
+  /* ── Newsletter form ─────────────────────────────────────── */
+  .footer-newsletter-desc {
+    font-size: var(--text-sm);
+    color: rgba(200, 223, 196, 0.65);
+    line-height: var(--leading-relaxed);
+    margin-bottom: 14px;
+  }
+
+  .footer-newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-newsletter-input-wrap {
+    position: relative;
+  }
+
+  .footer-newsletter-form input[type="email"] {
+    width: 100%;
+    padding: 11px 16px;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(168, 195, 160, 0.3);
+    background: rgba(255, 255, 255, 0.07);
+    color: var(--color-white);
+    font-size: var(--text-sm);
+    font-family: var(--font-body);
+    outline: none;
+    transition: border-color var(--transition-fast), background var(--transition-fast);
+  }
+
+  .footer-newsletter-form input[type="email"]::placeholder {
+    color: rgba(200, 223, 196, 0.4);
+  }
+
+  .footer-newsletter-form input[type="email"]:focus {
+    border-color: var(--color-accent);
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .footer-newsletter-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 20px;
+    border-radius: var(--radius-full);
+    background: var(--color-accent);
+    color: var(--color-primary-dark);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    font-family: var(--font-body);
+    cursor: pointer;
+    border: none;
+    transition:
+      background var(--transition-fast),
+      transform var(--transition-bounce),
+      box-shadow var(--transition-fast);
+    letter-spacing: var(--tracking-wide);
+  }
+
+  .footer-newsletter-btn:hover {
+    background: #c49640;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(212, 168, 87, 0.4);
+  }
+
+  /* ── Col heading override (already in global) ───────────── */
+  .footer-col h4 {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+    color: var(--color-white);
+    margin-bottom: 16px;
+  }
+
+  /* ── Bottom bar ──────────────────────────────────────────── */
+  .footer-bottom-wrap {
+    border-top: 1px solid rgba(168, 195, 160, 0.15);
+    padding: 20px 0;
+  }
+
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .footer-copyright {
+    font-size: var(--text-xs);
+    color: rgba(200, 223, 196, 0.45);
+    line-height: 1.5;
+  }
+
+  .footer-legal {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .footer-legal-link {
+    font-size: var(--text-xs);
+    color: rgba(200, 223, 196, 0.45);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .footer-legal-link:hover {
+    color: var(--color-accent);
+  }
+
+  .footer-legal-sep {
+    color: rgba(200, 223, 196, 0.25);
+    font-size: var(--text-xs);
+  }
+
+  /* ── Responsive ──────────────────────────────────────────── */
+  @media (max-width: 1023px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr !important;
+      gap: var(--space-4) !important;
+    }
+    .trust-item {
+      padding: 0 12px;
+    }
+  }
+
+  @media (max-width: 639px) {
+    .footer-grid {
+      grid-template-columns: 1fr !important;
+      gap: var(--space-4) !important;
+    }
+    .footer-trust-inner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .trust-divider {
+      display: none;
+    }
+    .trust-item {
+      padding: 0;
+    }
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
+    }
+    .footer-legal {
+      justify-content: center;
+    }
+  }
+</style>
+
+<!-- ─── Footer Scripts (scoped) ──────────────────────────── -->
+<script>
+  (function () {
+    /* ── Auto-update copyright year ──────────────────────── */
+    var yearEl = document.getElementById('footer-year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    /* ── Newsletter form submission ──────────────────────── */
+    var form = document.querySelector('.footer-newsletter-form');
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var input = form.querySelector('input[type="email"]');
+      var email = input ? input.value.trim() : '';
+
+      if (!email) {
+        if (window.GlowVeda && window.GlowVeda.ToastManager) {
+          window.GlowVeda.ToastManager.show('Please enter your email address.', 'warning');
+        }
+        return;
+      }
+
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        if (window.GlowVeda && window.GlowVeda.ToastManager) {
+          window.GlowVeda.ToastManager.show('Please enter a valid email address.', 'error');
+        }
+        return;
+      }
+
+      /* Simulate successful subscription */
+      if (window.GlowVeda && window.GlowVeda.ToastManager) {
+        window.GlowVeda.ToastManager.show(
+          'Welcome to the GlowVeda family! 🌿 Check your inbox.',
+          'success',
+          4000
+        );
+      }
+      if (input) input.value = '';
+    });
+  })();
+</script>
