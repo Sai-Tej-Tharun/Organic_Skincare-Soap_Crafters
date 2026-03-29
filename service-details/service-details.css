@@ -1,0 +1,1653 @@
+/* ============================================================
+   GlowVeda — Service Details SHARED Stylesheet
+   Organic Skincare & Soap Crafters
+   Version: 1.0.0
+   ============================================================
+   This single file styles ALL six service-details pages.
+   Each page assigns a data-service attribute on <body>
+   (e.g. data-service="soap-crafting") for any per-service
+   colour accent overrides at the bottom of this file.
+
+   TABLE OF CONTENTS:
+   01. Hero / Page Header
+   02. Sticky Sidebar Layout
+   03. Breadcrumb & Back Link
+   04. Service Meta Strip
+   05. Service Gallery
+   06. Main Content Body
+   07. Process / How It Works
+   08. Pricing Table
+   09. FAQ Accordion
+   10. Related Services
+   11. Booking / Enquiry Form
+   12. Sticky CTA Sidebar Card
+   13. Trust Badges Strip
+   14. Back to Top Button
+   15. Per-Service Accent Overrides
+   16. Dark Mode Overrides
+   17. Responsive — Tablet (640–1023px)
+   18. Responsive — Mobile (< 640px)
+   ============================================================ */
+
+
+/* ============================================================
+   01. HERO / PAGE HEADER
+   ============================================================ */
+
+.sd-hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-primary-dark);
+  padding-top: var(--nav-height);
+  padding-bottom: 0;
+  /* Min-height pushes content down before the gallery */
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Full-bleed hero image */
+.sd-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.sd-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  transition: transform 8s ease;
+}
+
+/* Subtle Ken Burns on load */
+.sd-hero.loaded .sd-hero__bg img {
+  transform: scale(1.04);
+}
+
+/* Gradient overlay — bottom-weighted for legibility */
+.sd-hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(30, 61, 43, 0.45) 0%,
+    rgba(30, 61, 43, 0.70) 50%,
+    rgba(30, 61, 43, 0.96) 100%
+  );
+}
+
+/* Decorative blob accents */
+.sd-hero__blob {
+  position: absolute;
+  border-radius: var(--radius-full);
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.sd-hero__blob--1 {
+  width: 420px;
+  height: 420px;
+  top: -80px;
+  right: -60px;
+  background: rgba(107, 175, 146, 0.15);
+}
+
+.sd-hero__blob--2 {
+  width: 260px;
+  height: 260px;
+  bottom: 100px;
+  left: -60px;
+  background: rgba(212, 168, 87, 0.10);
+}
+
+/* Inner content area */
+.sd-hero__inner {
+  position: relative;
+  z-index: 3;
+  padding-bottom: var(--space-6);
+  padding-top: var(--space-5);
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-3);
+}
+
+/* Service number badge */
+.sd-hero__service-num {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-2);
+}
+
+.sd-hero__service-num::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 2px;
+  background: var(--color-accent);
+  border-radius: var(--radius-full);
+}
+
+/* Hero title */
+.sd-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: var(--font-semibold);
+  color: var(--color-white);
+  line-height: 1.1;
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: var(--space-2);
+  max-width: 760px;
+}
+
+.sd-hero__title em {
+  font-style: italic;
+  font-weight: var(--font-light);
+}
+
+/* Hero tagline */
+.sd-hero__tagline {
+  font-size: var(--text-lg);
+  color: rgba(200, 223, 196, 0.85);
+  max-width: 600px;
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-3);
+}
+
+/* Hero quick-facts pills row */
+.sd-hero__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: var(--space-4);
+}
+
+.sd-hero__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(168, 195, 160, 0.28);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: rgba(200, 223, 196, 0.88);
+  backdrop-filter: blur(6px);
+}
+
+.sd-hero__pill svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* Hero CTA row */
+.sd-hero__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.sd-hero__actions .btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+
+/* ============================================================
+   02. STICKY SIDEBAR LAYOUT
+   Two-column: main content (left) + sticky sidebar (right)
+   ============================================================ */
+
+.sd-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: var(--space-5);
+  align-items: start;
+  padding-block: var(--space-6);
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-3);
+}
+
+/* Main content column */
+.sd-main {
+  min-width: 0; /* prevent overflow in grid */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* Sticky sidebar column */
+.sd-sidebar {
+  position: sticky;
+  top: calc(var(--nav-height) + 24px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+
+/* ============================================================
+   03. BREADCRUMB & BACK LINK
+   ============================================================ */
+
+.sd-back-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding-block: var(--space-2);
+  border-bottom: 1px solid var(--border-color-soft);
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-3);
+}
+
+.sd-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast), gap var(--transition-fast);
+}
+
+.sd-back-link svg {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--transition-bounce);
+}
+
+.sd-back-link:hover {
+  color: var(--color-primary);
+  gap: 10px;
+}
+
+.sd-back-link:hover svg {
+  transform: translateX(-3px);
+}
+
+
+/* ============================================================
+   04. SERVICE META STRIP
+   Icon row: Category | Duration | Format | Min. Order
+   ============================================================ */
+
+.sd-meta-strip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color-soft);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xs);
+}
+
+.sd-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 140px;
+}
+
+.sd-meta-item__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-lg);
+  background: rgba(47, 111, 78, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.sd-meta-item__icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.sd-meta-item__label {
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.sd-meta-item__value {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-heading);
+  display: block;
+}
+
+.sd-meta-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--border-color-soft);
+  flex-shrink: 0;
+}
+
+
+/* ============================================================
+   05. SERVICE GALLERY
+   ============================================================ */
+
+.sd-gallery {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  grid-template-rows: 280px 200px;
+  gap: 10px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.sd-gallery__item {
+  overflow: hidden;
+  position: relative;
+  cursor: zoom-in;
+}
+
+.sd-gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.sd-gallery__item:hover img {
+  transform: scale(1.06);
+}
+
+/* Main large image spans two rows */
+.sd-gallery__item--main {
+  grid-row: 1 / 3;
+}
+
+/* Hover overlay with zoom icon */
+.sd-gallery__item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(30, 61, 43, 0);
+  transition: background var(--transition-base);
+}
+
+.sd-gallery__item:hover::after {
+  background: rgba(30, 61, 43, 0.15);
+}
+
+/* Gallery lightbox trigger icon */
+.sd-gallery__zoom {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  opacity: 0;
+  transform: scale(0.8);
+  transition:
+    opacity var(--transition-base),
+    transform var(--transition-bounce);
+}
+
+.sd-gallery__zoom svg {
+  width: 16px;
+  height: 16px;
+}
+
+.sd-gallery__item:hover .sd-gallery__zoom {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+/* ============================================================
+   06. MAIN CONTENT BODY
+   ============================================================ */
+
+/* Content section wrapper */
+.sd-content-section {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color-soft);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4);
+  transition: box-shadow var(--transition-base);
+}
+
+.sd-content-section:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+/* Section heading within content */
+.sd-section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-heading);
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--border-color-soft);
+}
+
+.sd-section-title__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-lg);
+  background: rgba(47, 111, 78, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.sd-section-title__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Body copy paragraphs */
+.sd-body-text p {
+  color: var(--color-text-body);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-2);
+}
+
+.sd-body-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Benefits / feature list */
+.sd-benefit-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);
+  list-style: none;
+  padding: 0;
+  margin-top: var(--space-2);
+}
+
+.sd-benefit-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: var(--text-sm);
+  color: var(--color-text-body);
+  line-height: var(--leading-snug);
+  padding: var(--space-1) var(--space-2);
+  background: rgba(47, 111, 78, 0.04);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color-soft);
+}
+
+.sd-benefit-list li svg {
+  width: 16px;
+  height: 16px;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Ingredients grid */
+.sd-ingredients-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.sd-ingredient-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: var(--space-2);
+  background: var(--bg-body);
+  border: 1px solid var(--border-color-soft);
+  border-radius: var(--radius-xl);
+  text-align: center;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.sd-ingredient-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.sd-ingredient-card__img {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  border: 2px solid var(--border-color-soft);
+  transition: border-color var(--transition-fast);
+}
+
+.sd-ingredient-card:hover .sd-ingredient-card__img {
+  border-color: var(--color-secondary);
+}
+
+.sd-ingredient-card__name {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-heading);
+}
+
+.sd-ingredient-card__benefit {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: var(--leading-snug);
+}
+
+
+/* ============================================================
+   07. PROCESS / HOW IT WORKS
+   ============================================================ */
+
+.sd-process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  padding-left: var(--space-5);
+  margin-top: var(--space-2);
+}
+
+/* Vertical connecting line */
+.sd-process-steps::before {
+  content: '';
+  position: absolute;
+  left: 19px;
+  top: 20px;
+  bottom: 20px;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-primary),
+    var(--color-secondary) 80%,
+    transparent
+  );
+}
+
+.sd-process-step {
+  position: relative;
+  padding-bottom: var(--space-4);
+  padding-left: var(--space-3);
+}
+
+.sd-process-step:last-child {
+  padding-bottom: 0;
+}
+
+/* Step dot on the line */
+.sd-process-step::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--space-5) + 11px);
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  border: 3px solid var(--bg-surface);
+  box-shadow: 0 0 0 2px var(--color-secondary);
+  transition: background var(--transition-fast), transform var(--transition-bounce);
+  z-index: 1;
+}
+
+.sd-process-step:hover::before {
+  background: var(--color-accent);
+  transform: scale(1.3);
+}
+
+.sd-process-step__num {
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-primary-light);
+  margin-bottom: 4px;
+}
+
+.sd-process-step h4 {
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-heading);
+  margin-bottom: 6px;
+}
+
+.sd-process-step p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+
+/* ============================================================
+   08. PRICING TABLE
+   ============================================================ */
+
+.sd-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.sd-pricing-card {
+  border: 1px solid var(--border-color-soft);
+  border-radius: var(--radius-xl);
+  padding: var(--space-3) var(--space-3);
+  background: var(--bg-body);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.sd-pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Popular card highlight */
+.sd-pricing-card--popular {
+  border-color: var(--color-primary);
+  background: var(--bg-surface);
+}
+
+.sd-pricing-card--popular::before {
+  content: 'Most Popular';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: 11px;
+  font-weight: var(--font-bold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  padding: 4px 16px;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.sd-pricing-card--popular {
+  padding-top: calc(var(--space-3) + 12px);
+}
+
+.sd-pricing-card__tier {
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-primary-light);
+}
+
+.sd-pricing-card__name {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-heading);
+}
+
+/* Price display */
+.sd-pricing-card__price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-block: var(--space-1);
+}
+
+.sd-pricing-card__currency {
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.sd-pricing-card__amount {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.sd-pricing-card__unit {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1;
+}
+
+.sd-pricing-card__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+  padding-bottom: var(--space-1);
+  border-bottom: 1px solid var(--border-color-soft);
+}
+
+/* Pricing feature list */
+.sd-pricing-card__features {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.sd-pricing-card__features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: var(--text-sm);
+  color: var(--color-text-body);
+}
+
+.sd-pricing-card__features li svg {
+  width: 15px;
+  height: 15px;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.sd-pricing-card .btn {
+  width: 100%;
+  justify-content: center;
+  margin-top: var(--space-2);
+}
+
+
+/* ============================================================
+   09. FAQ ACCORDION
+   ============================================================ */
+
+.sd-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: var(--space-2);
+}
+
+.accordion-item {
+  border: 1px solid var(--border-color-soft);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-surface);
+  transition: box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.accordion-item:hover {
+  border-color: var(--color-secondary);
+}
+
+.accordion-item.open {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.accordion-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  gap: var(--space-2);
+}
+
+.accordion-trigger:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: -3px;
+}
+
+.accordion-trigger__text {
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-heading);
+  flex: 1;
+  line-height: var(--leading-snug);
+}
+
+.accordion-trigger__icon {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background: rgba(47, 111, 78, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  transition: background var(--transition-fast), transform var(--transition-bounce);
+}
+
+.accordion-trigger__icon svg {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--transition-base);
+}
+
+.accordion-item.open .accordion-trigger__icon {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.accordion-item.open .accordion-trigger__icon svg {
+  transform: rotate(180deg);
+}
+
+.accordion-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.accordion-panel__inner {
+  padding: 0 var(--space-3) var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+  border-top: 1px solid var(--border-color-soft);
+  padding-top: var(--space-2);
+}
+
+
+/* ============================================================
+   10. RELATED SERVICES
+   ============================================================ */
+
+.sd-related {
+  padding-block: var(--space-6);
+  background: var(--bg-section-alt);
+}
+
+.sd-related .container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-3);
+}
+
+.sd-related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+/* Related service card */
+.sd-related-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color-soft);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.sd-related-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.sd-related-card__img {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.sd-related-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.sd-related-card:hover .sd-related-card__img img {
+  transform: scale(1.06);
+}
+
+.sd-related-card__body {
+  padding: var(--space-2) var(--space-3);
+}
+
+.sd-related-card__num {
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-primary-light);
+  margin-bottom: 4px;
+  display: block;
+}
+
+.sd-related-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-heading);
+  line-height: var(--leading-snug);
+  margin-bottom: 8px;
+  transition: color var(--transition-fast);
+}
+
+.sd-related-card:hover .sd-related-card__title {
+  color: var(--color-primary);
+}
+
+.sd-related-card__price {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.sd-related-card__price strong {
+  color: var(--color-primary);
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+}
+
+.sd-related-card__arrow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-top: var(--space-1);
+  transition: gap var(--transition-fast);
+}
+
+.sd-related-card__arrow svg {
+  width: 14px;
+  height: 14px;
+}
+
+.sd-related-card:hover .sd-related-card__arrow {
+  gap: 10px;
+}
+
+
+/* ============================================================
+   11. BOOKING / ENQUIRY FORM
+   ============================================================ */
+
+.sd-booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.sd-booking-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+}
+
+.sd-booking-form textarea.form-control {
+  min-height: 100px;
+}
+
+.sd-booking-form .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Form success message */
+.sd-form-success {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  text-align: center;
+}
+
+.sd-form-success__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-full);
+  background: rgba(34, 197, 94, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-success);
+}
+
+.sd-form-success__icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.sd-form-success h4 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  color: var(--color-text-heading);
+}
+
+.sd-form-success p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.sd-booking-form.submitted .sd-form-fields { display: none; }
+.sd-booking-form.submitted .sd-form-success { display: flex; }
+
+
+/* ============================================================
+   12. STICKY CTA SIDEBAR CARD
+   ============================================================ */
+
+.sd-sidebar-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color-soft);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+/* Card header — gradient band */
+.sd-sidebar-card__header {
+  background: var(--gradient-green);
+  padding: var(--space-3) var(--space-3);
+  text-align: center;
+}
+
+.sd-sidebar-card__service-name {
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 4px;
+}
+
+.sd-sidebar-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-semibold);
+  color: var(--color-white);
+  line-height: var(--leading-snug);
+}
+
+/* Price section */
+.sd-sidebar-card__price-section {
+  padding: var(--space-3) var(--space-3) 0;
+  border-bottom: 1px solid var(--border-color-soft);
+  text-align: center;
+}
+
+.sd-sidebar-card__price-label {
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+.sd-sidebar-card__price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: var(--space-2);
+}
+
+.sd-sidebar-card__price-symbol {
+  font-size: var(--text-xl);
+  color: var(--color-primary);
+  font-weight: var(--font-semibold);
+}
+
+.sd-sidebar-card__price-amount {
+  font-family: var(--font-display);
+  font-size: var(--text-5xl);
+  font-weight: var(--font-bold);
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.sd-sidebar-card__price-unit {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* Quick facts in sidebar */
+.sd-sidebar-card__facts {
+  padding: var(--space-2) var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-bottom: 1px solid var(--border-color-soft);
+}
+
+.sd-sidebar-card__fact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--text-sm);
+}
+
+.sd-sidebar-card__fact-label {
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sd-sidebar-card__fact-label svg {
+  width: 14px;
+  height: 14px;
+  color: var(--color-primary);
+}
+
+.sd-sidebar-card__fact-value {
+  font-weight: var(--font-semibold);
+  color: var(--color-text-heading);
+}
+
+/* Sidebar CTA buttons */
+.sd-sidebar-card__actions {
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sd-sidebar-card__actions .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Sidebar guarantee note */
+.sd-sidebar-card__guarantee {
+  padding: 0 var(--space-3) var(--space-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.sd-sidebar-card__guarantee svg {
+  width: 14px;
+  height: 14px;
+  color: var(--color-success);
+}
+
+/* Secondary sidebar card — contact helper */
+.sd-sidebar-contact {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color-soft);
+  border-radius: var(--radius-xl);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.sd-sidebar-contact h5 {
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-heading);
+}
+
+.sd-sidebar-contact p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+.sd-sidebar-contact__links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: var(--space-1);
+}
+
+.sd-sidebar-contact__link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--text-sm);
+  color: var(--color-text-body);
+  text-decoration: none;
+  padding: 10px 12px;
+  background: var(--bg-body);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color-soft);
+  transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.sd-sidebar-contact__link svg {
+  width: 16px;
+  height: 16px;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.sd-sidebar-contact__link:hover {
+  background: rgba(47, 111, 78, 0.06);
+  border-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+
+/* ============================================================
+   13. TRUST BADGES STRIP
+   ============================================================ */
+
+.sd-trust-strip {
+  padding-block: var(--space-4);
+  background: var(--color-primary-dark);
+  overflow: hidden;
+}
+
+.sd-trust-strip .container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-3);
+}
+
+.sd-trust-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.sd-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(200, 223, 196, 0.85);
+}
+
+.sd-trust-item svg {
+  width: 22px;
+  height: 22px;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.sd-trust-item__text {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+}
+
+
+/* ============================================================
+   14. BACK TO TOP BUTTON
+   ============================================================ */
+
+.back-to-top {
+  position: fixed;
+  bottom: var(--space-3);
+  right: var(--space-3);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  cursor: pointer;
+  border: none;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition:
+    opacity var(--transition-base),
+    transform var(--transition-bounce),
+    background var(--transition-fast);
+  z-index: var(--z-sticky);
+}
+
+.back-to-top svg { width: 20px; height: 20px; }
+
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-3px);
+}
+
+
+/* ============================================================
+   15. PER-SERVICE ACCENT OVERRIDES
+   Each <body data-service="..."> value can slightly shift
+   the icon and accent colours for personality.
+   ============================================================ */
+
+/* Service 1 — Soap Crafting → Herbal Green (default, no override needed) */
+
+/* Service 2 — Skincare Consultation → Golden Glow accent */
+[data-service="skincare-consultation"] .sd-hero__service-num,
+[data-service="skincare-consultation"] .sd-section-title__icon {
+  color: var(--color-accent);
+}
+
+[data-service="skincare-consultation"] .sd-section-title__icon {
+  background: rgba(212, 168, 87, 0.1);
+}
+
+/* Service 3 — DIY Workshops → Leaf Green */
+[data-service="diy-workshops"] .sd-sidebar-card__header {
+  background: linear-gradient(135deg, #6BAF92, #2F6F4E);
+}
+
+/* Service 4 — Subscription → Deep Forest */
+[data-service="subscription-boxes"] .sd-hero__overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(30, 61, 43, 0.50) 0%,
+    rgba(30, 61, 43, 0.75) 50%,
+    rgba(30, 61, 43, 0.97) 100%
+  );
+}
+
+/* Service 5 — Wholesale → Clay Brown */
+[data-service="wholesale-bulk"] .sd-section-title__icon {
+  background: rgba(164, 113, 72, 0.1);
+  color: var(--color-clay);
+}
+
+[data-service="wholesale-bulk"] .sd-process-step::before {
+  background: var(--color-clay);
+}
+
+/* Service 6 — Gifting → Warm Glow */
+[data-service="gifting-solutions"] .sd-sidebar-card__header {
+  background: var(--gradient-glow);
+}
+
+[data-service="gifting-solutions"] .sd-sidebar-card__title {
+  color: var(--color-primary-dark);
+}
+
+[data-service="gifting-solutions"] .sd-sidebar-card__service-name {
+  color: rgba(30, 61, 43, 0.65);
+}
+
+
+/* ============================================================
+   16. DARK MODE OVERRIDES
+   ============================================================ */
+
+[data-theme="dark"] .sd-meta-strip {
+  background: var(--bg-card);
+}
+
+[data-theme="dark"] .sd-content-section {
+  background: var(--bg-card);
+}
+
+[data-theme="dark"] .sd-ingredient-card {
+  background: var(--bg-surface);
+}
+
+[data-theme="dark"] .sd-pricing-card {
+  background: var(--bg-card);
+}
+
+[data-theme="dark"] .sd-pricing-card--popular {
+  background: var(--bg-surface);
+  border-color: var(--color-primary);
+}
+
+[data-theme="dark"] .accordion-item {
+  background: var(--bg-card);
+}
+
+[data-theme="dark"] .sd-benefit-list li {
+  background: rgba(47, 111, 78, 0.07);
+}
+
+[data-theme="dark"] .sd-sidebar-card {
+  background: var(--bg-card);
+}
+
+[data-theme="dark"] .sd-sidebar-contact {
+  background: var(--bg-card);
+}
+
+[data-theme="dark"] .sd-sidebar-contact__link {
+  background: var(--bg-surface);
+}
+
+[data-theme="dark"] .sd-related-card {
+  background: var(--bg-card);
+}
+
+[data-theme="dark"] .sd-process-step::before {
+  border-color: var(--bg-card);
+}
+
+[data-theme="dark"] .sd-back-row {
+  background: var(--bg-body);
+}
+
+
+/* ============================================================
+   17. RESPONSIVE — TABLET (640–1023px)
+   ============================================================ */
+
+@media (min-width: 640px) and (max-width: 1023px) {
+
+  /* Hero */
+  .sd-hero { min-height: auto; }
+
+  /* Layout — sidebar drops below main */
+  .sd-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    padding-block: var(--space-4);
+  }
+
+  .sd-sidebar {
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+
+  /* Gallery shrinks */
+  .sd-gallery {
+    grid-template-rows: 220px 160px;
+  }
+
+  /* Meta strip wraps */
+  .sd-meta-strip {
+    gap: var(--space-2);
+    flex-wrap: wrap;
+  }
+
+  .sd-meta-divider { display: none; }
+  .sd-meta-item { min-width: 120px; }
+
+  /* Benefits */
+  .sd-benefit-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* Ingredients */
+  .sd-ingredients-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Pricing */
+  .sd-pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin-inline: auto;
+  }
+
+  /* Related */
+  .sd-related-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Booking form row */
+  .sd-booking-form .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Trust strip */
+  .sd-trust-items {
+    gap: var(--space-3);
+  }
+}
+
+
+/* ============================================================
+   18. RESPONSIVE — MOBILE (< 640px)
+   ============================================================ */
+
+@media (max-width: 639px) {
+
+  /* Hero */
+  .sd-hero { min-height: auto; }
+
+  .sd-hero__inner {
+    padding-block: var(--space-4);
+    padding-bottom: var(--space-5);
+  }
+
+  .sd-hero__title { font-size: clamp(2rem, 7vw, 2.8rem); }
+  .sd-hero__pills { display: none; }
+
+  .sd-hero__actions {
+    flex-direction: column;
+  }
+
+  .sd-hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Back row */
+  .sd-back-row { flex-direction: column; align-items: flex-start; }
+
+  /* Layout */
+  .sd-layout {
+    grid-template-columns: 1fr;
+    padding-block: var(--space-3);
+    gap: var(--space-3);
+    padding-inline: var(--space-2);
+  }
+
+  .sd-sidebar { position: static; }
+
+  /* Gallery */
+  .sd-gallery {
+    grid-template-columns: 1fr;
+    grid-template-rows: 220px 160px 160px;
+  }
+
+  .sd-gallery__item--main { grid-row: 1; }
+
+  /* Meta strip */
+  .sd-meta-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .sd-meta-divider { width: 100%; height: 1px; }
+
+  /* Benefits */
+  .sd-benefit-list { grid-template-columns: 1fr; }
+
+  /* Ingredients */
+  .sd-ingredients-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Pricing */
+  .sd-pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Related */
+  .sd-related-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Booking form */
+  .sd-booking-form .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Trust strip */
+  .sd-trust-items {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  /* Sidebar in mobile becomes normal flow */
+  .sd-sidebar-card__price-amount {
+    font-size: var(--text-4xl);
+  }
+
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+    bottom: var(--space-2);
+    right: var(--space-2);
+  }
+}

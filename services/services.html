@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <!-- ============================================================
+       GlowVeda — Services Page
+       Organic Skincare & Soap Crafters
+       Version: 1.0.0
+  ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- SEO Meta -->
+  <title>Our Services — GlowVeda | Organic Skincare & Soap Crafters</title>
+  <meta name="description" content="Explore GlowVeda's full range of services — from custom soap crafting and Ayurvedic skincare consultations to DIY workshops, subscription boxes, bulk wholesale, and gifting solutions." />
+  <meta name="keywords" content="GlowVeda services, organic skincare consultation, custom soap crafting, Ayurvedic skincare, DIY workshop, subscription box, wholesale skincare, gift sets" />
+  <meta name="author" content="GlowVeda" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Our Services — GlowVeda | Organic Skincare & Soap Crafters" />
+  <meta property="og:description" content="Explore GlowVeda's full range of Ayurvedic skincare services — consultations, workshops, subscriptions, wholesale and more." />
+  <meta property="og:image" content="../global-images/og-services.jpg" />
+  <meta property="og:url" content="https://glowveda.in/services/" />
+  <meta property="og:site_name" content="GlowVeda" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Our Services — GlowVeda" />
+  <meta name="twitter:description" content="Ayurvedic skincare consultations, workshops, subscriptions & more." />
+  <meta name="twitter:image" content="../global-images/og-services.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../global-images/logo.svg" />
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+  <!-- Global Stylesheet -->
+    <link rel="stylesheet" href="../global-css/global.css" />
+  <link rel="stylesheet" href="../global-css/navbar.css" />
+  <link rel="stylesheet" href="../global-css/footer.css" />
+  <!-- Page-specific Stylesheet -->
+  <link rel="stylesheet" href="services.css" />
+</head>
+
+<body class="has-navbar">
+
+  <!-- Skip link (accessibility) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Page Loader -->
+  <div class="page-loader" role="status" aria-label="Loading page">
+    <img src="../global-images/logo.svg" alt="GlowVeda" class="page-loader__logo" />
+  </div>
+
+  <!-- Navbar placeholder -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- ============================================================
+       MAIN CONTENT
+  ============================================================ -->
+  <main id="main-content">
+
+    <!-- ============================================================
+         01. HERO / PAGE HEADER
+    ============================================================ -->
+    <section class="services-hero" aria-label="Services hero">
+
+      <!-- Layered botanical background -->
+      <div class="services-hero__bg" aria-hidden="true">
+        <img
+          src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=1600&q=70"
+          alt=""
+          loading="eager"
+          width="1600"
+          height="700"
+        />
+      </div>
+      <div class="services-hero__overlay" aria-hidden="true"></div>
+
+      <!-- Animated botanical blobs -->
+      <div class="services-hero__blob services-hero__blob--1" aria-hidden="true"></div>
+      <div class="services-hero__blob services-hero__blob--2" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="services-hero__inner">
+
+          <!-- Breadcrumb -->
+          <nav class="breadcrumb services-hero__breadcrumb animate-on-scroll" aria-label="Breadcrumb">
+            <div class="breadcrumb-item">
+              <a href="../home-1/home.html">Home</a>
+            </div>
+            <span class="breadcrumb-sep" aria-hidden="true">
+              <i data-lucide="chevron-right"></i>
+            </span>
+            <div class="breadcrumb-item active" aria-current="page">Services</div>
+          </nav>
+
+          <div class="services-hero__content animate-on-scroll">
+            <span class="text-overline" style="color: var(--color-accent);">What We Offer</span>
+            <h1 class="services-hero__title">
+              Rooted in Ritual,<br />
+              <em class="gradient-text-gold">Crafted for You</em>
+            </h1>
+            <p class="services-hero__subtitle">
+              From personalised Ayurvedic consultations to handcrafted subscription 
+              boxes and immersive DIY workshops — every GlowVeda service is designed 
+              to bring nature closer to your everyday life.
+            </p>
+
+            <!-- Quick service jump pills -->
+            <div class="services-hero__jumps" role="navigation" aria-label="Jump to service">
+              <a href="#custom-soap-crafting"      class="services-jump-pill">Custom Soap Crafting</a>
+              <a href="#skincare-consultation"      class="services-jump-pill">Skincare Consultation</a>
+              <a href="#diy-workshops"              class="services-jump-pill">DIY Workshops</a>
+              <a href="#subscription-boxes"         class="services-jump-pill">Subscription Boxes</a>
+              <a href="#wholesale-bulk"             class="services-jump-pill">Wholesale & Bulk</a>
+              <a href="#gifting-solutions"          class="services-jump-pill">Gifting Solutions</a>
+            </div>
+          </div>
+
+          <!-- Hero stat strip -->
+          <div class="services-hero__stats animate-on-scroll">
+            <div class="services-hero__stat">
+              <span class="services-hero__stat-num">6</span>
+              <span class="services-hero__stat-lbl">Core Services</span>
+            </div>
+            <div class="services-hero__stat-divider" aria-hidden="true"></div>
+            <div class="services-hero__stat">
+              <span class="services-hero__stat-num">50K+</span>
+              <span class="services-hero__stat-lbl">Customers Served</span>
+            </div>
+            <div class="services-hero__stat-divider" aria-hidden="true"></div>
+            <div class="services-hero__stat">
+              <span class="services-hero__stat-num">100%</span>
+              <span class="services-hero__stat-lbl">Natural Ingredients</span>
+            </div>
+            <div class="services-hero__stat-divider" aria-hidden="true"></div>
+            <div class="services-hero__stat">
+              <span class="services-hero__stat-num">8 Yrs</span>
+              <span class="services-hero__stat-lbl">of Craftsmanship</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         02. SERVICES INTRO STRIP
+    ============================================================ -->
+    <section class="services-intro section-bg-sand" aria-label="Services overview">
+      <div class="container">
+        <div class="services-intro__inner animate-on-scroll">
+          <div class="services-intro__text">
+            <span class="section-label">Our Approach</span>
+            <h2 class="services-intro__heading">
+              Every Service Starts with an Ingredient Story
+            </h2>
+            <p>
+              GlowVeda was never just a product company — it's a philosophy. Every 
+              service we offer is an extension of our core belief: that effective skincare 
+              should be honest, traceable, and deeply personal. Whether you're booking 
+              a consultation, attending a workshop, or building a monthly ritual through 
+              our subscription boxes, you'll always know exactly what's going into 
+              your skin and why.
+            </p>
+          </div>
+          <div class="services-intro__features stagger-children">
+            <div class="services-intro__feature animate-on-scroll">
+              <i data-lucide="leaf"></i>
+              <span>Always 100% Natural</span>
+            </div>
+            <div class="services-intro__feature animate-on-scroll">
+              <i data-lucide="shield-check"></i>
+              <span>Dermatologist Backed</span>
+            </div>
+            <div class="services-intro__feature animate-on-scroll">
+              <i data-lucide="users"></i>
+              <span>Personalised for You</span>
+            </div>
+            <div class="services-intro__feature animate-on-scroll">
+              <i data-lucide="refresh-cw"></i>
+              <span>Ongoing Support</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         03. SIX SERVICES — MAIN GRID
+         Each card links to its own service-details page.
+    ============================================================ -->
+    <section class="services-grid-section section section-bg-off" id="all-services" aria-label="All services">
+      <div class="container">
+
+        <div class="section-header animate-on-scroll">
+          <span class="section-label">Explore Everything</span>
+          <h2>Our Six Core Services</h2>
+          <p>Click any service to explore its full details, process, pricing and FAQs.</p>
+        </div>
+
+        <!-- ── SERVICE 01 — CUSTOM SOAP CRAFTING ── -->
+        <article
+          class="service-card service-card--featured animate-on-scroll"
+          id="custom-soap-crafting"
+          aria-label="Service: Custom Soap Crafting"
+        >
+          <!-- Image panel -->
+          <div class="service-card__media">
+            <img
+              src="https://images.unsplash.com/photo-1607006344380-b6775a0824a7?w=700&q=80"
+              alt="Artisan hands crafting custom organic herbal soap bars at GlowVeda studio"
+              loading="lazy"
+              width="700"
+              height="520"
+            />
+            <div class="service-card__media-badge">
+              <span class="badge badge-new">Most Popular</span>
+            </div>
+          </div>
+
+          <!-- Content panel -->
+          <div class="service-card__body">
+            <div class="service-card__number" aria-hidden="true">01</div>
+            <div class="service-card__icon-wrap service-card__icon-wrap--green">
+              <i data-lucide="sparkles"></i>
+            </div>
+            <span class="service-card__category">Handcrafted Products</span>
+            <h2 class="service-card__title">Custom Soap Crafting</h2>
+            <p class="service-card__excerpt">
+              Design your own bespoke herbal soap bar — choose your base oils, active 
+              botanicals, essential oil blend, colour, and shape. Every bar is cold-processed 
+              by hand in small batches for maximum potency and freshness. Perfect for gifting, 
+              bridal favours, corporate wellness kits, or your very own signature skincare ritual.
+            </p>
+
+            <!-- Key highlights -->
+            <ul class="service-card__highlights" aria-label="Service highlights">
+              <li><i data-lucide="check-circle-2"></i> Choose from 40+ certified organic botanicals</li>
+              <li><i data-lucide="check-circle-2"></i> Cold-process or melt-and-pour options</li>
+              <li><i data-lucide="check-circle-2"></i> Custom labels, shapes & gift wrapping</li>
+              <li><i data-lucide="check-circle-2"></i> Minimum order: 12 bars</li>
+            </ul>
+
+            <!-- Pricing preview -->
+            <div class="service-card__pricing">
+              <span class="service-card__price-from">Starting from</span>
+              <span class="service-card__price">₹299 <span>/bar</span></span>
+            </div>
+
+            <!-- CTA -->
+            <a href="../service-details/service-details-1.html" class="btn btn-primary service-card__cta" aria-label="View full details for Custom Soap Crafting">
+              View Service Details
+              <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- ── SERVICE 02 — AYURVEDIC SKINCARE CONSULTATION ── -->
+        <article
+          class="service-card service-card--reverse animate-on-scroll"
+          id="skincare-consultation"
+          aria-label="Service: Ayurvedic Skincare Consultation"
+        >
+          <div class="service-card__media">
+            <img
+              src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=700&q=80"
+              alt="Skin specialist examining facial skin during Ayurvedic skincare consultation"
+              loading="lazy"
+              width="700"
+              height="520"
+            />
+            <div class="service-card__media-badge">
+              <span class="badge badge-accent">Expert Led</span>
+            </div>
+          </div>
+
+          <div class="service-card__body">
+            <div class="service-card__number" aria-hidden="true">02</div>
+            <div class="service-card__icon-wrap service-card__icon-wrap--gold">
+              <i data-lucide="stethoscope"></i>
+            </div>
+            <span class="service-card__category">Wellness Consultation</span>
+            <h2 class="service-card__title">Ayurvedic Skincare Consultation</h2>
+            <p class="service-card__excerpt">
+              A 45-minute one-on-one session with our certified Ayurvedic skin specialist. 
+              We assess your Prakriti (body constitution), skin type, current concerns, 
+              diet, and lifestyle — then build a fully personalised skincare protocol 
+              using only GlowVeda's natural formulations. Available in-person at our 
+              Thrissur studio or via secure video call.
+            </p>
+
+            <ul class="service-card__highlights" aria-label="Service highlights">
+              <li><i data-lucide="check-circle-2"></i> Prakriti & Dosha analysis included</li>
+              <li><i data-lucide="check-circle-2"></i> Written skincare plan with product map</li>
+              <li><i data-lucide="check-circle-2"></i> 15-day follow-up check-in call</li>
+              <li><i data-lucide="check-circle-2"></i> In-person or video consultation available</li>
+            </ul>
+
+            <div class="service-card__pricing">
+              <span class="service-card__price-from">Starting from</span>
+              <span class="service-card__price">₹999 <span>/session</span></span>
+            </div>
+
+            <a href="../service-details/service-details-2.html" class="btn btn-primary service-card__cta" aria-label="View full details for Ayurvedic Skincare Consultation">
+              View Service Details
+              <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- ── SERVICE 03 — DIY WORKSHOPS ── -->
+        <article
+          class="service-card animate-on-scroll"
+          id="diy-workshops"
+          aria-label="Service: DIY Herbal Skincare Workshops"
+        >
+          <div class="service-card__media">
+            <img
+              src="https://images.unsplash.com/photo-1599305090598-fe179d501227?w=700&q=80"
+              alt="Participants learning to make herbal skincare products at a GlowVeda DIY workshop"
+              loading="lazy"
+              width="700"
+              height="520"
+            />
+            <div class="service-card__media-badge">
+              <span class="badge badge-success">Hands-On</span>
+            </div>
+          </div>
+
+          <div class="service-card__body">
+            <div class="service-card__number" aria-hidden="true">03</div>
+            <div class="service-card__icon-wrap service-card__icon-wrap--leaf">
+              <i data-lucide="graduation-cap"></i>
+            </div>
+            <span class="service-card__category">Learning & Experience</span>
+            <h2 class="service-card__title">DIY Herbal Skincare Workshops</h2>
+            <p class="service-card__excerpt">
+              Roll up your sleeves and learn to make your own organic skincare products 
+              under the guidance of our master herbalists. Our weekend workshops cover 
+              cold-process soap making, herbal face serums, body butters, and Ayurvedic 
+              hair oils — all from scratch, using real ingredients you can find in your 
+              kitchen. Take home everything you make, plus a comprehensive recipe booklet.
+            </p>
+
+            <ul class="service-card__highlights" aria-label="Service highlights">
+              <li><i data-lucide="check-circle-2"></i> Beginner to advanced levels available</li>
+              <li><i data-lucide="check-circle-2"></i> All ingredients & tools provided</li>
+              <li><i data-lucide="check-circle-2"></i> Take home your creations + recipe book</li>
+              <li><i data-lucide="check-circle-2"></i> Group (up to 12) or private sessions</li>
+            </ul>
+
+            <div class="service-card__pricing">
+              <span class="service-card__price-from">Starting from</span>
+              <span class="service-card__price">₹1,499 <span>/person</span></span>
+            </div>
+
+            <a href="../service-details/service-details-3.html" class="btn btn-primary service-card__cta" aria-label="View full details for DIY Herbal Skincare Workshops">
+              View Service Details
+              <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- ── SERVICE 04 — SUBSCRIPTION BOXES ── -->
+        <article
+          class="service-card service-card--reverse animate-on-scroll"
+          id="subscription-boxes"
+          aria-label="Service: Monthly Skincare Subscription Box"
+        >
+          <div class="service-card__media">
+            <img
+              src="s4.jpg"
+              alt="GlowVeda curated monthly skincare subscription box with herbal products"
+              loading="lazy"
+              width="700"
+              height="520"
+            />
+            <div class="service-card__media-badge">
+              <span class="badge badge-accent">Best Value</span>
+            </div>
+          </div>
+
+          <div class="service-card__body">
+            <div class="service-card__number" aria-hidden="true">04</div>
+            <div class="service-card__icon-wrap service-card__icon-wrap--gold">
+              <i data-lucide="package"></i>
+            </div>
+            <span class="service-card__category">Subscription & Ritual</span>
+            <h2 class="service-card__title">Monthly Skincare Subscription Box</h2>
+            <p class="service-card__excerpt">
+              Receive a curated box of 4–6 full-size GlowVeda products delivered to your 
+              door every month, personalised to your skin type and seasonal needs. Each 
+              box includes a handwritten ingredient story card, a DIY recipe to try at home, 
+              and exclusive subscriber-only products not available in our regular shop. 
+              Flexible monthly, quarterly, or annual plans.
+            </p>
+
+            <ul class="service-card__highlights" aria-label="Service highlights">
+              <li><i data-lucide="check-circle-2"></i> 4–6 full-size products every month</li>
+              <li><i data-lucide="check-circle-2"></i> Skin-type personalisation at sign-up</li>
+              <li><i data-lucide="check-circle-2"></i> Exclusive subscriber-only formulas</li>
+              <li><i data-lucide="check-circle-2"></i> Pause, skip or cancel anytime</li>
+            </ul>
+
+            <div class="service-card__pricing">
+              <span class="service-card__price-from">Starting from</span>
+              <span class="service-card__price">₹699 <span>/month</span></span>
+            </div>
+
+            <a href="../service-details/service-details-4.html" class="btn btn-primary service-card__cta" aria-label="View full details for Monthly Skincare Subscription Box">
+              View Service Details
+              <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- ── SERVICE 05 — WHOLESALE & BULK ── -->
+        <article
+          class="service-card animate-on-scroll"
+          id="wholesale-bulk"
+          aria-label="Service: Wholesale & Bulk Supply"
+        >
+          <div class="service-card__media">
+            <img
+              src="s5.webp"
+              alt="Bulk organic herbal soap and skincare products ready for wholesale supply"
+              loading="lazy"
+              width="700"
+              height="520"
+            />
+            <div class="service-card__media-badge">
+              <span class="badge" style="background:rgba(164,113,72,0.15); color: var(--color-clay);">B2B</span>
+            </div>
+          </div>
+
+          <div class="service-card__body">
+            <div class="service-card__number" aria-hidden="true">05</div>
+            <div class="service-card__icon-wrap service-card__icon-wrap--clay">
+              <i data-lucide="truck"></i>
+            </div>
+            <span class="service-card__category">Business & Trade</span>
+            <h2 class="service-card__title">Wholesale & Bulk Supply</h2>
+            <p class="service-card__excerpt">
+              Partner with GlowVeda to stock our certified organic skincare range in your 
+              spa, hotel, wellness centre, pharmacy, or retail store. We offer competitive 
+              wholesale pricing, white-label customisation, and dedicated account management 
+              for B2B partners. Our products are ISO 22716 compliant, USDA Organic certified, 
+              and PETA approved — making them safe for even the most discerning clientele.
+            </p>
+
+            <ul class="service-card__highlights" aria-label="Service highlights">
+              <li><i data-lucide="check-circle-2"></i> Competitive wholesale pricing tiers</li>
+              <li><i data-lucide="check-circle-2"></i> White-label & private label options</li>
+              <li><i data-lucide="check-circle-2"></i> Minimum order: 50 units per SKU</li>
+              <li><i data-lucide="check-circle-2"></i> Pan-India & international shipping</li>
+            </ul>
+
+            <div class="service-card__pricing">
+              <span class="service-card__price-from">Starting from</span>
+              <span class="service-card__price">₹149 <span>/unit (bulk)</span></span>
+            </div>
+
+            <a href="../service-details/service-details-5.html" class="btn btn-primary service-card__cta" aria-label="View full details for Wholesale & Bulk Supply">
+              View Service Details
+              <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- ── SERVICE 06 — GIFTING SOLUTIONS ── -->
+        <article
+          class="service-card service-card--reverse animate-on-scroll"
+          id="gifting-solutions"
+          aria-label="Service: Corporate & Personal Gifting Solutions"
+        >
+          <div class="service-card__media">
+            <img
+              src="https://images.unsplash.com/photo-1512909006721-3d6018887383?w=700&q=80"
+              alt="Beautifully packaged GlowVeda organic skincare gift set with ribbons"
+              loading="lazy"
+              width="700"
+              height="520"
+            />
+            <div class="service-card__media-badge">
+              <span class="badge badge-primary">Seasonal</span>
+            </div>
+          </div>
+
+          <div class="service-card__body">
+            <div class="service-card__number" aria-hidden="true">06</div>
+            <div class="service-card__icon-wrap service-card__icon-wrap--green">
+              <i data-lucide="gift"></i>
+            </div>
+            <span class="service-card__category">Gifting & Occasions</span>
+            <h2 class="service-card__title">Corporate & Personal Gifting</h2>
+            <p class="service-card__excerpt">
+              Make every occasion memorable with GlowVeda's thoughtfully curated gift sets. 
+              From Diwali and wedding favours to corporate wellness kits and employee 
+              appreciation hampers — we design, assemble, and deliver custom gift boxes 
+              at scale. Every hamper features our handcrafted products in premium eco-friendly 
+              packaging with personalised message cards and optional branded inserts.
+            </p>
+
+            <ul class="service-card__highlights" aria-label="Service highlights">
+              <li><i data-lucide="check-circle-2"></i> Fully customisable hamper contents</li>
+              <li><i data-lucide="check-circle-2"></i> Premium eco-friendly gift packaging</li>
+              <li><i data-lucide="check-circle-2"></i> Personalised message cards</li>
+              <li><i data-lucide="check-circle-2"></i> Corporate bulk orders with branding</li>
+            </ul>
+
+            <div class="service-card__pricing">
+              <span class="service-card__price-from">Starting from</span>
+              <span class="service-card__price">₹499 <span>/kit</span></span>
+            </div>
+
+            <a href="../service-details/service-details-6.html" class="btn btn-primary service-card__cta" aria-label="View full details for Corporate & Personal Gifting Solutions">
+              View Service Details
+              <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+      </div><!-- /.container -->
+    </section>
+
+    <!-- ============================================================
+         04. SERVICES COMPARISON TABLE
+    ============================================================ -->
+    <section class="section section-bg-sand services-compare" aria-label="Services comparison">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <span class="section-label">At a Glance</span>
+          <h2>Compare All Services</h2>
+          <p>Find the service that fits your need, budget and lifestyle.</p>
+        </div>
+
+        <div class="services-compare__table-wrap animate-on-scroll">
+          <table class="services-compare__table" role="table" aria-label="Services comparison table">
+            <thead>
+              <tr>
+                <th scope="col">Service</th>
+                <th scope="col">Best For</th>
+                <th scope="col">Format</th>
+                <th scope="col">Duration</th>
+                <th scope="col">Starting Price</th>
+                <th scope="col">Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Service">
+                  <div class="services-compare__name">
+                    <i data-lucide="sparkles"></i>
+                    Custom Soap Crafting
+                  </div>
+                </td>
+                <td data-label="Best For">Individuals, gifts, corporate</td>
+                <td data-label="Format"><span class="tag active">In-Studio / Online</span></td>
+                <td data-label="Duration">3–5 days production</td>
+                <td data-label="Starting Price" class="services-compare__price">₹299 / bar</td>
+                <td data-label="Details">
+                  <a href="../service-details/service-details-1.html" class="btn btn-outline btn-sm" aria-label="Explore Custom Soap Crafting details">Explore</a>
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Service">
+                  <div class="services-compare__name">
+                    <i data-lucide="stethoscope"></i>
+                    Skincare Consultation
+                  </div>
+                </td>
+                <td data-label="Best For">Skin concerns, personalised care</td>
+                <td data-label="Format"><span class="tag active">In-Person / Video</span></td>
+                <td data-label="Duration">45 minutes</td>
+                <td data-label="Starting Price" class="services-compare__price">₹999 / session</td>
+                <td data-label="Details">
+                  <a href="../service-details/service-details-2.html" class="btn btn-outline btn-sm" aria-label="Explore Skincare Consultation details">Explore</a>
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Service">
+                  <div class="services-compare__name">
+                    <i data-lucide="graduation-cap"></i>
+                    DIY Workshops
+                  </div>
+                </td>
+                <td data-label="Best For">Learning, groups, experiences</td>
+                <td data-label="Format"><span class="tag active">In-Studio</span></td>
+                <td data-label="Duration">3–4 hours</td>
+                <td data-label="Starting Price" class="services-compare__price">₹1,499 / person</td>
+                <td data-label="Details">
+                  <a href="../service-details/service-details-3.html" class="btn btn-outline btn-sm" aria-label="Explore DIY Workshops details">Explore</a>
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Service">
+                  <div class="services-compare__name">
+                    <i data-lucide="package"></i>
+                    Subscription Box
+                  </div>
+                </td>
+                <td data-label="Best For">Routines, discovery, savings</td>
+                <td data-label="Format"><span class="tag active">Monthly Delivery</span></td>
+                <td data-label="Duration">Ongoing</td>
+                <td data-label="Starting Price" class="services-compare__price">₹699 / month</td>
+                <td data-label="Details">
+                  <a href="../service-details/service-details-4.html" class="btn btn-outline btn-sm" aria-label="Explore Subscription Box details">Explore</a>
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Service">
+                  <div class="services-compare__name">
+                    <i data-lucide="truck"></i>
+                    Wholesale & Bulk
+                  </div>
+                </td>
+                <td data-label="Best For">Spas, hotels, retailers</td>
+                <td data-label="Format"><span class="tag active">B2B / Trade</span></td>
+                <td data-label="Duration">7–14 days lead time</td>
+                <td data-label="Starting Price" class="services-compare__price">₹149 / unit</td>
+                <td data-label="Details">
+                  <a href="../service-details/service-details-5.html" class="btn btn-outline btn-sm" aria-label="Explore Wholesale & Bulk details">Explore</a>
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Service">
+                  <div class="services-compare__name">
+                    <i data-lucide="gift"></i>
+                    Corporate Gifting
+                  </div>
+                </td>
+                <td data-label="Best For">Weddings, Diwali, corporate</td>
+                <td data-label="Format"><span class="tag active">Custom Order</span></td>
+                <td data-label="Duration">5–10 days</td>
+                <td data-label="Starting Price" class="services-compare__price">₹499 / kit</td>
+                <td data-label="Details">
+                  <a href="../service-details/service-details-6.html" class="btn btn-outline btn-sm" aria-label="Explore Corporate Gifting details">Explore</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         05. HOW IT WORKS
+    ============================================================ -->
+    <section class="section section-bg-white services-process" aria-label="How our services work">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <span class="section-label">Simple Process</span>
+          <h2>How It Works</h2>
+          <p>Getting started with any GlowVeda service takes just three easy steps.</p>
+        </div>
+
+        <div class="services-process__steps stagger-children">
+
+          <div class="services-process__step animate-on-scroll">
+            <div class="services-process__step-num">01</div>
+            <div class="services-process__step-icon">
+              <i data-lucide="mouse-pointer-click"></i>
+            </div>
+            <h4>Choose Your Service</h4>
+            <p>
+              Browse our six core services and click "View Service Details" on 
+              any card to explore full descriptions, pricing plans, FAQs, and 
+              what to expect from GlowVeda.
+            </p>
+          </div>
+
+          <div class="services-process__connector" aria-hidden="true">
+            <i data-lucide="arrow-right"></i>
+          </div>
+
+          <div class="services-process__step animate-on-scroll">
+            <div class="services-process__step-num">02</div>
+            <div class="services-process__step-icon">
+              <i data-lucide="calendar-check"></i>
+            </div>
+            <h4>Book or Order</h4>
+            <p>
+              Use the online booking form, WhatsApp, or email us directly. For 
+              consultations and workshops, pick a date that suits you. For 
+              products and subscriptions, complete your order instantly.
+            </p>
+          </div>
+
+          <div class="services-process__connector" aria-hidden="true">
+            <i data-lucide="arrow-right"></i>
+          </div>
+
+          <div class="services-process__step animate-on-scroll">
+            <div class="services-process__step-num">03</div>
+            <div class="services-process__step-icon">
+              <i data-lucide="heart"></i>
+            </div>
+            <h4>Experience GlowVeda</h4>
+            <p>
+              Receive your consultation, attend your workshop, or open your 
+              handcrafted delivery — and feel the difference that genuinely 
+              natural skincare makes from the very first use.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         06. TESTIMONIALS STRIP
+    ============================================================ -->
+    <section class="section section-bg-sand services-testimonials" aria-label="Customer testimonials for services">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <span class="section-label">Voices of Trust</span>
+          <h2>What Our Customers Say</h2>
+        </div>
+
+        <div class="services-testimonials__grid stagger-children">
+
+          <article class="testimonial-card animate-on-scroll">
+            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+            <div class="testimonial-card__quote-icon"><i data-lucide="quote"></i></div>
+            <p class="testimonial-card__text">
+              "The custom soap workshop was the most fun and educational experience. 
+              I made a turmeric-sandalwood bar that my whole family now uses. 
+              Priya's team made it so simple and joyful."
+            </p>
+            <div class="testimonial-card__author">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Kavitha M." class="testimonial-card__avatar" loading="lazy" width="48" height="48" />
+              <div>
+                <p class="testimonial-card__name">Kavitha M.</p>
+                <p class="testimonial-card__role">DIY Workshop Attendee</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card animate-on-scroll">
+            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+            <div class="testimonial-card__quote-icon"><i data-lucide="quote"></i></div>
+            <p class="testimonial-card__text">
+              "We placed a bulk order of 200 gift hampers for our company's Diwali 
+              gifting. The turnaround was impressively fast, the packaging was stunning, 
+              and our employees absolutely loved the products."
+            </p>
+            <div class="testimonial-card__author">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&q=80" alt="Suresh P., HR Director" class="testimonial-card__avatar" loading="lazy" width="48" height="48" />
+              <div>
+                <p class="testimonial-card__name">Suresh P.</p>
+                <p class="testimonial-card__role">HR Director — Corporate Client</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card animate-on-scroll">
+            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+            <div class="testimonial-card__quote-icon"><i data-lucide="quote"></i></div>
+            <p class="testimonial-card__text">
+              "The subscription box is genuinely my favourite thing every month. 
+              Discovering new products curated with real ingredient 
+              stories behind each one — it's skincare that finally feels intentional."
+            </p>
+            <div class="testimonial-card__author">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Nisha R." class="testimonial-card__avatar" loading="lazy" width="48" height="48" />
+              <div>
+                <p class="testimonial-card__name">Nisha R.</p>
+                <p class="testimonial-card__role">Subscription Member — 14 months</p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         07. CTA BANNER
+    ============================================================ -->
+    <section class="services-cta section" aria-label="Get started with GlowVeda">
+      <div class="services-cta__bg" aria-hidden="true">
+        <img
+          src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf?w=1400&q=70"
+          alt=""
+          loading="lazy"
+          width="1400"
+          height="500"
+        />
+      </div>
+      <div class="services-cta__overlay" aria-hidden="true"></div>
+      <div class="container">
+        <div class="services-cta__inner animate-on-scroll">
+          <span class="text-overline" style="color: var(--color-accent);">Ready to Begin?</span>
+          <h2 class="text-white">
+            Not Sure Which Service<br />
+            <em class="gradient-text-gold">Is Right for You?</em>
+          </h2>
+          <p style="color: rgba(255,255,255,0.8); max-width: 520px;">
+            Our wellness team is happy to guide you. Book a free 15-minute 
+            discovery call and we'll point you to the perfect GlowVeda 
+            service for your skin, budget and lifestyle.
+          </p>
+          <div class="services-cta__actions">
+            <a href="../contact/contact.html" class="btn btn-accent btn-lg">
+              <i data-lucide="phone"></i>
+              Book a Free Call
+            </a>
+            <a href="../contact/contact.html#quote-form" class="btn btn-white btn-lg">
+              <i data-lucide="mail"></i>
+              Get a Quote
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer placeholder -->
+  <footer id="footer" role="contentinfo" aria-label="Site footer">
+
+  <!-- ─── Trust / Certification Strip ─────────────────────── -->
+  <div class="footer-trust-strip">
+    <div class="container">
+      <div class="footer-trust-inner">
+
+        <div class="trust-item">
+          <span class="trust-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </span>
+          <span>100% Natural Ingredients</span>
+        </div>
+
+        <div class="trust-divider" aria-hidden="true"></div>
+
+        <div class="trust-item">
+          <span class="trust-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </span>
+          <span>Handcrafted in Small Batches</span>
+        </div>
+
+        <div class="trust-divider" aria-hidden="true"></div>
+
+        <div class="trust-item">
+          <span class="trust-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+          </span>
+          <span>Cruelty-Free Certified</span>
+        </div>
+
+        <div class="trust-divider" aria-hidden="true"></div>
+
+        <div class="trust-item">
+          <span class="trust-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+          </span>
+          <span>Ayurvedic Formulations</span>
+        </div>
+
+        <div class="trust-divider" aria-hidden="true"></div>
+
+        <div class="trust-item">
+          <span class="trust-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 12 20 22 4 22 4 12"></polyline>
+              <rect x="2" y="7" width="20" height="5"></rect>
+              <line x1="12" y1="22" x2="12" y2="7"></line>
+              <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+              <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+            </svg>
+          </span>
+          <span>Zero Harmful Chemicals</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Footer Top: Brand + Links ────────────────────────── -->
+  <div class="footer-top">
+    <div class="footer-grid">
+
+      <!-- Column 1: Brand / About -->
+      <div class="footer-brand">
+        <a href="../home-1/home.html" aria-label="GlowVeda home">
+          <img
+            src="../global-images/logo.svg"
+            alt="GlowVeda Organic Skincare"
+            class="footer-logo"
+            width="44"
+            height="44"
+            loading="lazy"
+          />
+        </a>
+        <p class="footer-brand-name">
+          <span class="footer-brand-glow">Glow</span>Veda
+        </p>
+        <p>
+          Rooted in Ayurvedic wisdom, crafted with love.
+          We make pure, handmade skincare that honours
+          your skin and the earth.
+        </p>
+
+        <!-- Contact Info -->
+        <address class="footer-contact">
+          <a href="tel:+919876543210" class="footer-contact-item" aria-label="Call us">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.36 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            +91 (987) 654-3210
+          </a>
+          <a href="mailto:hr@glowveda.com" class="footer-contact-item" aria-label="Email us">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            hr@glowveda.com
+          </a>
+        </address>
+
+        <!-- Social Links -->
+        <div class="footer-social" role="list" aria-label="Social media links">
+          <a href="#" class="footer-social-link" role="listitem" aria-label="Follow us on Instagram" rel="noopener noreferrer" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="#" class="footer-social-link" role="listitem" aria-label="Follow us on Facebook" rel="noopener noreferrer" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a href="#" class="footer-social-link" role="listitem" aria-label="Follow us on YouTube" rel="noopener noreferrer" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"></path>
+              <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon>
+            </svg>
+          </a>
+          <a href="#" class="footer-social-link" role="listitem" aria-label="Follow us on Pinterest" rel="noopener noreferrer" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M8 12a4 4 0 1 0 8 0 4 4 0 0 0-8 0"></path>
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path>
+              <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"></path>
+            </svg>
+          </a>
+          <a href="#" class="footer-social-link" role="listitem" aria-label="Follow us on Twitter / X" rel="noopener noreferrer" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4l16 16M4 20L20 4"></path>
+            </svg>
+          </a>
+        </div>
+
+      </div><!-- /.footer-brand -->
+
+      <!-- Column 2: Quick Links -->
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links" role="list">
+          <li>
+            <a href="../home-1/home.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              Home Classic
+            </a>
+          </li>
+          <li>
+            <a href="../home-2/home.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              Home Premium
+            </a>
+          </li>
+          <li>
+            <a href="../about/about.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              About Us
+            </a>
+          </li>
+          <li>
+            <a href="../services/services.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              Our Services
+            </a>
+          </li>
+          <li>
+            <a href="../pricing/pricing.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              Pricing & Plans
+            </a>
+          </li>
+          <li>
+            <a href="../blogs/blogs.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              Blog & Articles
+            </a>
+          </li>
+          <li>
+            <a href="../contact/contact.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Products / Categories -->
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul class="footer-links" role="list">
+          <li>
+            <a href="../service-details/service-details-1.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              Custom Soap Crafting
+            </a>
+          </li>
+          <li>
+            <a href="../service-details/service-details-2.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              Skincare Consultation
+            </a>
+          </li>
+          <li>
+            <a href="../service-details/service-details-3.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              DIY Workshops
+            </a>
+          </li>
+          <li>
+            <a href="../service-details/service-details-4.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              Subscription Box
+            </a>
+          </li>
+          <li>
+            <a href="../service-details/service-details-5.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              Wholesale & Bulk Supply
+            </a>
+          </li>
+          <li>
+            <a href="../service-details/service-details-6.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              Corporate & Personal Gifting
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Newsletter + Help -->
+      <div class="footer-col">
+        <h4>Stay in the Glow</h4>
+        <p class="footer-newsletter-desc">
+          Get skincare tips, Ayurvedic wisdom, and
+          exclusive offers — delivered to your inbox.
+        </p>
+
+        <!-- Newsletter Form -->
+        <form class="footer-newsletter-form" novalidate aria-label="Newsletter subscription">
+          <div class="footer-newsletter-input-wrap">
+            <input
+              type="email"
+              name="newsletter-email"
+              placeholder="Your email address"
+              aria-label="Email address for newsletter"
+              autocomplete="email"
+              required
+            />
+          </div>
+          <button type="submit" class="footer-newsletter-btn" aria-label="Subscribe to newsletter">
+            Subscribe
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </form>
+
+        <!-- Help Links -->
+        <h4 style="margin-top: 28px;">Help & Support</h4>
+        <ul class="footer-links" role="list">
+          <li>
+            <a href="../404-page/404.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              FAQs
+            </a>
+          </li>
+          <li>
+            <a href="../coming-soon/coming-soon.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              Skincare Advice
+            </a>
+          </li>
+          <li>
+            <a href="../admin-dashboard/dashboard.html" class="footer-link" role="listitem">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              Dashboard
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div><!-- /.footer-grid -->
+  </div><!-- /.footer-top -->
+
+  <!-- ─── Footer Bottom: Copyright + Legal ─────────────────── -->
+  <div class="footer-bottom-wrap">
+    <div class="footer-bottom container">
+
+      <p class="footer-copyright">
+        &copy; <span id="footer-year"></span> GlowVeda. All rights reserved.
+        Crafted with <span aria-label="love" role="img">🌿</span> in India.
+      </p>
+
+      <nav class="footer-legal" aria-label="Legal links">
+        <a href="#" class="footer-legal-link">Privacy Policy</a>
+        <span aria-hidden="true" class="footer-legal-sep">·</span>
+        <a href="#" class="footer-legal-link">Terms of Service</a>
+        <span aria-hidden="true" class="footer-legal-sep">·</span>
+        <a href="#" class="footer-legal-link">Cookie Policy</a>
+        <span aria-hidden="true" class="footer-legal-sep">·</span>
+        <a href="../coming-soon/coming-soon.html" class="footer-legal-link">Sitemap</a>
+      </nav>
+
+    </div>
+  </div>
+
+</footer><!-- /#footer -->
+
+  <!-- Back to Top -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Scroll to top">
+    <i data-lucide="chevron-up"></i>
+  </button>
+
+  <!-- Global JS -->
+    <script src="../global-js/global.js"></script>
+  <script src="../global-js/navbar.js" defer></script>
+  <script src="../global-js/footer.js"></script>
+  <!-- Page JS -->
+  <script src="services.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+</script>
+</body>
+</html>
