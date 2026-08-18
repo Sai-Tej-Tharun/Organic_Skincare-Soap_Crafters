@@ -1,0 +1,444 @@
+/* ============================================================
+   GlowVeda — 404 Page Stylesheet
+   404-page/404.css
+   Version: 1.0.0
+   ============================================================ */
+
+/* Lock viewport — no scroll */
+html, body.page-404-body {
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.page-404-body {
+  font-family: var(--font-body);
+  background: var(--bg-body);
+  color: var(--color-text-body);
+  transition: background-color var(--transition-slow), color var(--transition-slow);
+}
+
+/* ---- Full-screen centering ---- */
+.page-404 {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ============================================================
+   BACKGROUND LAYER
+   ============================================================ */
+
+.bg-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+}
+
+.bg-blob--1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(47, 111, 78, 0.10) 0%, transparent 70%);
+  top: -120px;
+  left: -100px;
+  animation: blobDrift 12s ease-in-out infinite;
+}
+
+.bg-blob--2 {
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(212, 168, 87, 0.09) 0%, transparent 70%);
+  bottom: -80px;
+  right: -80px;
+  animation: blobDrift 10s ease-in-out infinite reverse;
+}
+
+.bg-blob--3 {
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(107, 175, 146, 0.08) 0%, transparent 70%);
+  top: 50%;
+  left: 60%;
+  animation: blobDrift 14s ease-in-out infinite 2s;
+}
+
+@keyframes blobDrift {
+  0%, 100% { transform: translate(0, 0); }
+  40%       { transform: translate(20px, -24px); }
+  70%       { transform: translate(-14px, 16px); }
+}
+
+/* Floating botanical emojis */
+.floater {
+  position: absolute;
+  font-size: 28px;
+  opacity: 0.10;
+  animation: floatDrift 8s ease-in-out infinite;
+  user-select: none;
+}
+
+.floater--1 { top: 10%; left: 5%;  animation-delay: 0s;    font-size: 36px; }
+.floater--2 { top: 70%; left: 8%;  animation-delay: -2s;   font-size: 28px; }
+.floater--3 { top: 15%; right: 6%; animation-delay: -4s;   font-size: 32px; }
+.floater--4 { bottom: 12%; right: 10%; animation-delay: -1s; font-size: 24px; }
+.floater--5 { top: 50%; right: 4%; animation-delay: -3s;   font-size: 40px; }
+
+@keyframes floatDrift {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%       { transform: translateY(-18px) rotate(12deg); }
+}
+
+/* ============================================================
+   CONTENT BLOCK
+   ============================================================ */
+
+.error-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  padding: var(--space-3) var(--space-3);
+  animation: fadeInUp 0.7s ease both;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- Logo ---- */
+.error-logo {
+  display: inline-block;
+  margin-bottom: 4px;
+  transition: transform var(--transition-bounce);
+}
+
+.error-logo img {
+  height: 40px;
+  width: auto;
+}
+
+.error-logo:hover {
+  transform: translateY(-3px);
+}
+
+/* ============================================================
+   BIG 404 NUMBER
+   ============================================================ */
+
+.error-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  line-height: 1;
+  user-select: none;
+}
+
+/* The two "4" digits */
+.en-4 {
+  font-family: var(--font-display);
+  font-size: clamp(100px, 14vw, 160px);
+  font-weight: var(--font-bold);
+  color: var(--color-primary);
+  letter-spacing: -0.04em;
+  /* Subtle gradient fill */
+  background: var(--gradient-green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: numFloat 5s ease-in-out infinite;
+}
+
+.en-left  { animation-delay: 0s; }
+.en-right { animation-delay: -2.5s; }
+
+@keyframes numFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+/* The "0" with the botanical SVG inside */
+.en-zero {
+  position: relative;
+  width: clamp(100px, 14vw, 160px);
+  height: clamp(100px, 14vw, 160px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: zeroSpin 20s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes zeroSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.en-zero__svg {
+  width: 100%;
+  height: 100%;
+  /* Counter-rotate leaves so they stay upright */
+  animation: zeroCounterSpin 20s linear infinite;
+}
+
+@keyframes zeroCounterSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+
+/* ============================================================
+   ERROR TEXT
+   ============================================================ */
+
+.error-text {
+  max-width: 460px;
+  animation: fadeInUp 0.7s ease 0.15s both;
+}
+
+.error-text h1 {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-2xl), 3.5vw, var(--text-4xl));
+  font-weight: var(--font-semibold);
+  color: var(--color-text-heading);
+  line-height: var(--leading-tight);
+  margin-bottom: 10px;
+}
+
+.error-text p {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+/* ============================================================
+   ACTION BUTTONS
+   ============================================================ */
+
+.error-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fadeInUp 0.7s ease 0.25s both;
+}
+
+/* Primary CTA */
+.btn-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-decoration: none;
+  border: 2px solid var(--color-primary);
+  transition:
+    background var(--transition-base),
+    transform var(--transition-bounce),
+    box-shadow var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-home::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.btn-home:hover::before { transform: translateX(100%); }
+
+.btn-home:hover {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(47, 111, 78, 0.30);
+  color: var(--color-white);
+}
+
+/* Secondary CTA */
+.btn-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: transparent;
+  color: var(--color-primary);
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-decoration: none;
+  border: 2px solid var(--color-primary);
+  transition:
+    background var(--transition-base),
+    color var(--transition-base),
+    transform var(--transition-bounce);
+}
+
+.btn-contact:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   QUICK NAV LINKS
+   ============================================================ */
+
+.error-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fadeInUp 0.7s ease 0.35s both;
+}
+
+.error-nav__label {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  font-weight: var(--font-medium);
+}
+
+.error-nav nav {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.error-nav__link {
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
+  background: var(--bg-surface);
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-bounce);
+}
+
+.error-nav__link:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   THEME / RTL CONTROLS
+   ============================================================ */
+
+.ctrl-bar {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 200;
+  display: flex;
+  gap: 8px;
+}
+
+.ctrl-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
+  background: var(--bg-surface);
+  color: var(--color-text-body);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  box-shadow: var(--shadow-sm);
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-bounce);
+}
+
+.ctrl-btn:hover {
+  background: var(--color-sand);
+  border-color: var(--color-secondary);
+  color: var(--color-primary);
+  transform: scale(1.08);
+}
+
+.ctrl-btn:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   DARK MODE
+   ============================================================ */
+
+[data-theme="dark"] .error-nav__link,
+[data-theme="dark"] .btn-contact {
+  background: var(--bg-card);
+}
+
+[data-theme="dark"] .ctrl-btn {
+  background: var(--bg-card);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 639px) {
+  .error-content { gap: 14px; padding: var(--space-2); }
+
+  .en-4 { font-size: 80px; }
+
+  .en-zero {
+    width: 80px;
+    height: 80px;
+  }
+
+  .error-text h1 { font-size: var(--text-2xl); }
+  .error-text p  { font-size: var(--text-sm); }
+
+  .error-actions { gap: 10px; }
+  .btn-home, .btn-contact { padding: 10px 22px; font-size: var(--text-xs); }
+
+  .floater { display: none; }
+
+  .ctrl-bar { top: 10px; right: 10px; }
+}
